@@ -59,22 +59,22 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Tekla.Structures, Version=2099.1.0.0, Culture=neutral, PublicKeyToken=2f04dbe497b71114, processorArchitecture=MSIL">
-    
+    <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Tekla.Structures.Catalogs, Version=2099.1.0.0, Culture=neutral, PublicKeyToken=2f04dbe497b71114, processorArchitecture=MSIL">
-   
+    <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Tekla.Structures.Datatype, Version=2099.1.0.0, Culture=neutral, PublicKeyToken=2f04dbe497b71114, processorArchitecture=MSIL">
-   
+    <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Tekla.Structures.Dialog, Version=2099.1.0.0, Culture=neutral, PublicKeyToken=2f04dbe497b71114, processorArchitecture=MSIL">
-  
+    <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Tekla.Structures.Drawing, Version=2099.1.0.0, Culture=neutral, PublicKeyToken=2f04dbe497b71114, processorArchitecture=MSIL">
-     
+    <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Tekla.Structures.Model, Version=2099.1.0.0, Culture=neutral, PublicKeyToken=2f04dbe497b71114, processorArchitecture=MSIL">
-    
+    <SpecificVersion>False</SpecificVersion>
     </Reference>
   </ItemGroup>
   <ItemGroup>
