@@ -57,7 +57,9 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Tekla.Structures, Version=2099.1.0.0, Culture=neutral, PublicKeyToken=2f04dbe497b71114, processorArchitecture=MSIL" />
+    <SpecificVersion>False</SpecificVersion>
     <Reference Include="Tekla.Structures.Model, Version=2099.1.0.0, Culture=neutral, PublicKeyToken=2f04dbe497b71114, processorArchitecture=MSIL" />
+    <SpecificVersion>False</SpecificVersion>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Form1.cs">
