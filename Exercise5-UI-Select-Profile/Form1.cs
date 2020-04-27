@@ -204,7 +204,8 @@ namespace Exercise
         private void CreateFootingAndColumn(double PositionX, double PositionY)
         {
             ModelObject PadFooting = CreatePadFooting(PositionX, PositionY, double.Parse(FootingSize.Text));
-            ModelObject Column = CreateColumn(PositionX, PositionY);
+            string columnProfile = textBox1.Text;
+            ModelObject Column = CreateColumn(PositionX, PositionY, columnProfile);
             CreateBasePlate(Column, PadFooting);
         }
 
@@ -248,12 +249,12 @@ namespace Exercise
         /// <param name="PositionX">X-coordination of the position</param>
         /// <param name="PositionY">Y-coordination of the position</param>
         /// <returns></returns>
-        private ModelObject CreateColumn(double PositionX, double PositionY)
+private static ModelObject CreateColumn(double PositionX, double PositionY, string ColumnProfile)
         {
             Beam Column = new Beam();
 
             Column.Name = "COLUMN";
-            Column.Profile.ProfileString = ColumnsProfileTextBox.Text;
+            Column.Profile.ProfileString = ColumnProfile;
             Column.Material.MaterialString = "S235JR";
             Column.Class = "2";
             Column.StartPoint.X = PositionX;
@@ -309,7 +310,7 @@ namespace Exercise
 
         private void profileCatalog1_SelectClicked(object sender, EventArgs e)
         {
-            profileCatalog1.SelectedProfile = ColumnsProfileTextBox.Text;
+            profileCatalog1.SelectedProfile = textBox1.Text;
         }
 
         /// <summary>
@@ -318,7 +319,7 @@ namespace Exercise
 
         private void profileCatalog1_SelectionDone(object sender, EventArgs e)
         {
-            SetAttributeValue(ColumnsProfileTextBox, profileCatalog1.SelectedProfile);
+            SetAttributeValue(textBox1, profileCatalog1.SelectedProfile);
         }
 
         
