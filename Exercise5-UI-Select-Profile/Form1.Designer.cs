@@ -59,7 +59,6 @@ namespace Exercise
             this.FootingSize.Name = "FootingSize";
             this.FootingSize.Size = new System.Drawing.Size(58, 20);
             this.FootingSize.TabIndex = 1;
-            this.FootingSize.TextChanged += new System.EventHandler(this.FootingSize_TextChanged);
             // 
             // SizeLabel1
             // 
@@ -139,6 +138,7 @@ namespace Exercise
             this.Controls.Add(this.CreatePadFootingButton);
             this.Name = "Form1";
             this.Text = "DotNetExample";
+            this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();
 
