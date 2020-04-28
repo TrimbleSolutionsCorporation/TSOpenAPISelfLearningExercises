@@ -21,7 +21,6 @@ namespace Exercise
 
             InitializeComponent();
             base.InitializeForm();
-            FootingSize.Text = "1500";
             MyModel = new Model();
 
         }
@@ -35,7 +34,8 @@ namespace Exercise
         private void CreatePadFootings(object sender, EventArgs e)
         {
             // Always remember to check that you really have working connection
-            if (MyModel.GetConnectionStatus())
+            if (MyModel.GetConnectionStatus() && !String.IsNullOrEmpty(ColumnsProfileTextBox.Text) &&
+                !String.IsNullOrEmpty(FootingSize.Text))
             {
                 // Loop through X-axis  (these loops should be changed to match current grid)
                 for (double PositionX = 0.0; PositionX <= 12000.0; PositionX += 3000.0)
@@ -186,11 +186,6 @@ namespace Exercise
             return Result;
         }
 
-        private void FootingSize_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             CreateRebars();
@@ -203,10 +198,11 @@ namespace Exercise
         /// <param name="PositionY">Y-coordination of the position</param>
         private void CreateFootingAndColumn(double PositionX, double PositionY)
         {
-            ModelObject PadFooting = CreatePadFooting(PositionX, PositionY, double.Parse(FootingSize.Text));
-            string columnProfile = textBox1.Text;
-            ModelObject Column = CreateColumn(PositionX, PositionY, columnProfile);
-            CreateBasePlate(Column, PadFooting);
+            double footingSize = double.Parse(FootingSize.Text);
+            Beam PadFooting = CreatePadFooting(PositionX, PositionY, footingSize);
+            string columnProfile = ColumnsProfileTextBox.Text;
+            Beam Column = CreateColumn(PositionX, PositionY, columnProfile);
+            CreateBasePlate(Column);
         }
 
         /// <summary>
@@ -217,7 +213,7 @@ namespace Exercise
         /// <param name="PositionY">Y-coordination of the position</param>
         /// <param name="FootingSize">Size of the footing: FootingSize*FootingSize for profile</param>
         /// <returns></returns>
-        private static ModelObject CreatePadFooting(double PositionX, double PositionY, double FootingSize)
+        private static Beam CreatePadFooting(double PositionX, double PositionY, double FootingSize)
         {
             Beam PadFooting = new Beam();
 
@@ -249,7 +245,7 @@ namespace Exercise
         /// <param name="PositionX">X-coordination of the position</param>
         /// <param name="PositionY">Y-coordination of the position</param>
         /// <returns></returns>
-private static ModelObject CreateColumn(double PositionX, double PositionY, string ColumnProfile)
+private static Beam CreateColumn(double PositionX, double PositionY, string ColumnProfile)
         {
             Beam Column = new Beam();
 
@@ -259,6 +255,7 @@ private static ModelObject CreateColumn(double PositionX, double PositionY, stri
             Column.Class = "2";
             Column.StartPoint.X = PositionX;
             Column.StartPoint.Y = PositionY;
+            Column.StartPoint.Z = -100;
             Column.EndPoint.X = PositionX;
             Column.EndPoint.Y = PositionY;
             Column.EndPoint.Z = 5000.0;
@@ -279,9 +276,9 @@ private static ModelObject CreateColumn(double PositionX, double PositionY, stri
         /// </summary>
         /// <param name="PrimaryObject"></param>
         /// <param name="SecondaryObject"></param>
-        private static void CreateBasePlate(ModelObject PrimaryObject, ModelObject SecondaryObject)
+        private static void CreateBasePlate(Beam PrimaryObject)
         {
-            Connection BasePlate = new Connection();
+            Detail BasePlate = new Detail();
 
             BasePlate.Name = "Stiffened Base Plate";
             BasePlate.Number = 1014;
@@ -290,7 +287,10 @@ private static ModelObject CreateColumn(double PositionX, double PositionY, stri
             BasePlate.PositionType = PositionTypeEnum.COLLISION_PLANE;
 
             BasePlate.SetPrimaryObject(PrimaryObject);
-            BasePlate.SetSecondaryObject(SecondaryObject);
+
+            Point refPoint = PrimaryObject.StartPoint;
+            refPoint.Z = 0;
+            BasePlate.SetReferencePoint(refPoint);
             BasePlate.SetAttribute("cut", 1);  //Enable anchor rods
 
             if (!BasePlate.Insert())
@@ -310,7 +310,7 @@ private static ModelObject CreateColumn(double PositionX, double PositionY, stri
 
         private void profileCatalog1_SelectClicked(object sender, EventArgs e)
         {
-            profileCatalog1.SelectedProfile = textBox1.Text;
+            profileCatalog1.SelectedProfile = ColumnsProfileTextBox.Text;
         }
 
         /// <summary>
@@ -319,7 +319,7 @@ private static ModelObject CreateColumn(double PositionX, double PositionY, stri
 
         private void profileCatalog1_SelectionDone(object sender, EventArgs e)
         {
-            SetAttributeValue(textBox1, profileCatalog1.SelectedProfile);
+            SetAttributeValue(ColumnsProfileTextBox, profileCatalog1.SelectedProfile);
         }
 
         
