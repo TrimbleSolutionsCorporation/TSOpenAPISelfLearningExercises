@@ -59,7 +59,7 @@ namespace Exercise
 
             PadFooting1.Name = "FOOTING";
             PadFooting1.Profile.ProfileString = "1500*1500";
-            PadFooting1.Material.MaterialString = "K30-2";
+            PadFooting1.Material.MaterialString = "S235JR";
             PadFooting1.Class = "8";
             PadFooting1.StartPoint.X = PositionX;
             PadFooting1.StartPoint.Y = PositionY;
