@@ -1,6 +1,6 @@
 namespace Exercise
 {
-    partial class Form1
+    partial class Form3
     {
         /// <summary>
         /// Required designer variable.
@@ -35,9 +35,9 @@ namespace Exercise
             // 
             this.CreatePadFootingButton.Location = new System.Drawing.Point(41, 27);
             this.CreatePadFootingButton.Name = "CreatePadFootingButton";
-            this.CreatePadFootingButton.Size = new System.Drawing.Size(121, 23);
+            this.CreatePadFootingButton.Size = new System.Drawing.Size(121, 43);
             this.CreatePadFootingButton.TabIndex = 0;
-            this.CreatePadFootingButton.Text = "Footings and Columns";
+            this.CreatePadFootingButton.Text = "Footings, Columns and Details";
             this.CreatePadFootingButton.UseVisualStyleBackColor = true;
             this.CreatePadFootingButton.Click += new System.EventHandler(this.CreatePadFootings);
             // 
@@ -45,10 +45,11 @@ namespace Exercise
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(202, 123);
+            this.ClientSize = new System.Drawing.Size(284, 161);
             this.Controls.Add(this.CreatePadFootingButton);
             this.Name = "Form1";
-            this.Text = "DotNetExample";
+            this.Text = "API Exercise 3";
+            this.TopMost = true;
             this.ResumeLayout(false);
 
         }
