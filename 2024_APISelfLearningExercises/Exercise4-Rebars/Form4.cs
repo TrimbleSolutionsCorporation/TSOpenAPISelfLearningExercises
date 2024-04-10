@@ -233,7 +233,7 @@ namespace Exercise
 
         /// <summary>
         /// Method that creates a column to given position and returns the created column.
-        /// The created pad footing is recognized as beam in Tekla Structures.
+        /// The created column is recognized as beam in Tekla Structures.
         /// </summary>
         /// <param name="PositionX">X-coordination of the position</param>
         /// <param name="PositionY">Y-coordination of the position</param>

@@ -50,6 +50,8 @@ namespace Exercise
             this.FootingSize.Name = "FootingSize";
             this.FootingSize.Size = new System.Drawing.Size(58, 20);
             this.FootingSize.TabIndex = 1;
+            this.FootingSize.Text = "1500";
+            this.FootingSize.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.FootingSize.TextChanged += new System.EventHandler(this.FootingSize_TextChanged);
             // 
             // SizeLabel1
@@ -71,7 +73,7 @@ namespace Exercise
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // Form1
+            // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -80,7 +82,7 @@ namespace Exercise
             this.Controls.Add(this.SizeLabel1);
             this.Controls.Add(this.FootingSize);
             this.Controls.Add(this.CreatePadFootingButton);
-            this.Name = "Form1";
+            this.Name = "Form4";
             this.Text = "API Exercise 4";
             this.TopMost = true;
             this.ResumeLayout(false);
