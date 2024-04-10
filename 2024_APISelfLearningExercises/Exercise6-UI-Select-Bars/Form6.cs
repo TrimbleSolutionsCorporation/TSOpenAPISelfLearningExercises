@@ -278,7 +278,7 @@ namespace Exercise
         }
 
         /// <summary>
-        /// Method that creates connection (1004) between two given objects.
+        /// Method that creates detail (1014)
         /// </summary>
         /// <param name="PrimaryObject"></param>
         private static void CreateBasePlate(Beam PrimaryObject)

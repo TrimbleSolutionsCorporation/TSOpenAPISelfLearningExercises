@@ -1,6 +1,6 @@
 namespace Exercise
 {
-    partial class Form1
+    partial class Form9
     {
         /// <summary>
         /// Required designer variable.
@@ -84,7 +84,6 @@ namespace Exercise
             this.FootingSize.Name = "FootingSize";
             this.FootingSize.Size = new System.Drawing.Size(58, 20);
             this.FootingSize.TabIndex = 1;
-            this.FootingSize.TextChanged += new System.EventHandler(this.FootingSize_TextChanged);
             // 
             // SizeLabel1
             // 
@@ -228,6 +227,7 @@ namespace Exercise
             this.structuresExtender.SetAttributeTypeName(this.reinforcementCatalog1, null);
             this.reinforcementCatalog1.BackColor = System.Drawing.Color.Transparent;
             this.structuresExtender.SetBindPropertyName(this.reinforcementCatalog1, null);
+            this.reinforcementCatalog1.ButtonText = "albl_Select__";
             this.reinforcementCatalog1.Location = new System.Drawing.Point(247, 48);
             this.reinforcementCatalog1.Name = "reinforcementCatalog1";
             this.reinforcementCatalog1.SelectedRebarBendingRadius = 0D;
@@ -298,6 +298,7 @@ namespace Exercise
             this.structuresExtender.SetAttributeTypeName(this.profileCatalog1, null);
             this.profileCatalog1.BackColor = System.Drawing.Color.Transparent;
             this.structuresExtender.SetBindPropertyName(this.profileCatalog1, null);
+            this.profileCatalog1.ButtonText = "albl_Select__";
             this.profileCatalog1.Location = new System.Drawing.Point(247, 19);
             this.profileCatalog1.Name = "profileCatalog1";
             this.profileCatalog1.SelectedProfile = "";
@@ -325,11 +326,15 @@ namespace Exercise
             this.saveLoad1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.structuresExtender.SetBindPropertyName(this.saveLoad1, null);
             this.saveLoad1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.saveLoad1.HelpFileType = Tekla.Structures.Dialog.UIControls.SaveLoad.HelpFileTypeEnum.General;
+            this.saveLoad1.HelpKeyword = "";
+            this.saveLoad1.HelpUrl = "";
             this.saveLoad1.Location = new System.Drawing.Point(0, 0);
             this.saveLoad1.Name = "saveLoad1";
             this.saveLoad1.SaveAsText = "";
             this.saveLoad1.Size = new System.Drawing.Size(534, 43);
             this.saveLoad1.TabIndex = 14;
+            this.saveLoad1.UserDefinedHelpFilePath = null;
             // 
             // CreateButton
             // 
@@ -427,6 +432,7 @@ namespace Exercise
             this.structuresExtender.SetAttributeName(this.listView1, null);
             this.structuresExtender.SetAttributeTypeName(this.listView1, null);
             this.structuresExtender.SetBindPropertyName(this.listView1, null);
+            this.listView1.HideSelection = false;
             this.listView1.HoverSelection = true;
             this.listView1.Location = new System.Drawing.Point(98, 45);
             this.listView1.MultiSelect = false;
@@ -436,7 +442,7 @@ namespace Exercise
             this.listView1.TileSize = new System.Drawing.Size(5, 5);
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
-            // Form1
+            // Form9
             // 
             this.structuresExtender.SetAttributeName(this, null);
             this.structuresExtender.SetAttributeTypeName(this, null);
@@ -453,8 +459,9 @@ namespace Exercise
             this.Controls.Add(this.SizeLabel1);
             this.Controls.Add(this.FootingSize);
             this.Controls.Add(this.CreatePadFootingButton);
-            this.Name = "Form1";
-            this.Text = "DotNetExample";
+            this.Name = "Form9";
+            this.Text = "API Exercise 9";
+            this.TopMost = true;
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

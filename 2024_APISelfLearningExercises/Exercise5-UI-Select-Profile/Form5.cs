@@ -266,7 +266,7 @@ private static Beam CreateColumn(double PositionX, double PositionY, string Colu
         }
 
         /// <summary>
-        /// Method that creates connection (1004) between two given objects.
+        /// Method that creates detail (1014)
         /// </summary>
         /// <param name="PrimaryObject"></param>
         /// <param name="SecondaryObject"></param>
