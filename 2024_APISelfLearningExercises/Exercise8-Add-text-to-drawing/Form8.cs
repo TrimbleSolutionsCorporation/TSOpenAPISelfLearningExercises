@@ -19,13 +19,18 @@ using View=Tekla.Structures.Drawing.View;
 
 namespace Exercise
 {
-    public partial class Form1 : ApplicationFormBase
+    public partial class Form8 : ApplicationFormBase
     {
-        public Form1()
+        public Form8()
         {
             InitializeComponent();
             base.InitializeForm();
-            FootingSize.Text = "1500";
+            SetAttributeValue(FootingSize, "1500");
+            SetAttributeValue(ColumnsProfileTextBox, "HEA300");
+            SetAttributeValue(SizeTextBox, "12");
+            SetAttributeValue(GradeTextBox, "A500HW");
+            SetAttributeValue(BendingRadiusTextBox, new TSD.Distance(144.0));
+            SetAttributeValue(ColumnsMaterialTextBox, "S235JR");
             MyModel = new Model();
             SteelMaterials = new List<MaterialItem>();
 
@@ -199,11 +204,6 @@ namespace Exercise
             return Result;
         }
 
-        private void FootingSize_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             CreateRebars();
@@ -217,8 +217,8 @@ namespace Exercise
         private void CreateFootingAndColumn(double PositionX, double PositionY)
         {
             ModelObject PadFooting = CreatePadFooting(PositionX, PositionY, double.Parse(FootingSize.Text));
-            ModelObject Column = CreateColumn(PositionX, PositionY);
-            CreateBasePlate(Column, PadFooting);
+            Beam Column = CreateColumn(PositionX, PositionY);
+            CreateBasePlate(Column);
         }
 
         /// <summary>
@@ -235,7 +235,7 @@ namespace Exercise
 
             PadFooting.Name = "FOOTING";
             PadFooting.Profile.ProfileString = FootingSize + "*" + FootingSize; //"1500*1500";
-            PadFooting.Material.MaterialString = "K30-2";
+            PadFooting.Material.MaterialString = "C50/60";
             PadFooting.Class = "8";
             PadFooting.StartPoint.X = PositionX;
             PadFooting.StartPoint.Y = PositionY;
@@ -256,12 +256,12 @@ namespace Exercise
 
         /// <summary>
         ///  Method that creates a column to given position and returns the created column
-        /// The created pad footing is recognized as beam in Tekla Structures.
+        /// The created column is recognized as beam in Tekla Structures.
         /// </summary>
         /// <param name="PositionX">X-coordination of the position</param>
         /// <param name="PositionY">Y-coordination of the position</param>
         /// <returns></returns>
-        private ModelObject CreateColumn(double PositionX, double PositionY)
+        private Beam CreateColumn(double PositionX, double PositionY)
         {
             Beam Column = new Beam();
 
@@ -291,18 +291,18 @@ namespace Exercise
         /// </summary>
         /// <param name="PrimaryObject"></param>
         /// <param name="SecondaryObject"></param>
-        private static void CreateBasePlate(ModelObject PrimaryObject, ModelObject SecondaryObject)
+        private static void CreateBasePlate(Beam PrimaryObject)
         {
-            Connection BasePlate = new Connection();
+            Detail BasePlate = new Detail();
 
             BasePlate.Name = "Stiffened Base Plate";
             BasePlate.Number = 1014;
             BasePlate.LoadAttributesFromFile("standard");
-            BasePlate.UpVector = new Vector(0, 0, 1000);
-            BasePlate.PositionType = PositionTypeEnum.COLLISION_PLANE;
+            BasePlate.AutoDirectionType = AutoDirectionTypeEnum.AUTODIR_FROM_ATTRIBUTE_FILE;
+            BasePlate.DetailType = DetailTypeEnum.END;
 
             BasePlate.SetPrimaryObject(PrimaryObject);
-            BasePlate.SetSecondaryObject(SecondaryObject);
+            BasePlate.SetReferencePoint(PrimaryObject.StartPoint);
             BasePlate.SetAttribute("cut", 1);  //Enable anchor rods
 
             if (!BasePlate.Insert())
@@ -311,9 +311,9 @@ namespace Exercise
             }
         }
 
-/*-----------------------------------------*
- * Exercises 5-7 under this                 *
- * ----------------------------------------*/
+        /*-----------------------------------------*
+         * Exercises 5-7 under this                 *
+         * ----------------------------------------*/
         /// <summary>
         /// Callback function to show the profile selection dialog. The value set in 
         /// ColumnsProfileTextBox is set as SelectedProfile to be selected in the 
@@ -429,6 +429,9 @@ namespace Exercise
             if(MyDrawingHandler.GetConnectionStatus())
             {
                 Drawing MyDrawing = MyDrawingHandler.GetActiveDrawing();
+
+                if(MyDrawing == null) 
+                    return;
 
                 ContainerView Sheet = MyDrawing.GetSheet();
                 DrawingObjectEnumerator MyViewEnumerator = Sheet.GetViews();

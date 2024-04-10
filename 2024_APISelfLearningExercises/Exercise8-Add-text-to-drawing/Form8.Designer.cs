@@ -1,6 +1,6 @@
 namespace Exercise
 {
-    partial class Form1
+    partial class Form8
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@ namespace Exercise
             this.CreatePadFootingButton = new System.Windows.Forms.Button();
             this.FootingSize = new System.Windows.Forms.TextBox();
             this.SizeLabel1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonCreateRebars = new System.Windows.Forms.Button();
             this.ColumnsProfileTextBox = new System.Windows.Forms.TextBox();
             this.SizeTextBox = new System.Windows.Forms.TextBox();
             this.GradeTextBox = new System.Windows.Forms.TextBox();
@@ -49,7 +49,7 @@ namespace Exercise
             this.profileCatalog1 = new Tekla.Structures.Dialog.UIControls.ProfileCatalog();
             this.label5 = new System.Windows.Forms.Label();
             this.saveLoad1 = new Tekla.Structures.Dialog.UIControls.SaveLoad();
-            this.CreateButton = new System.Windows.Forms.Button();
+            this.CreateDrawingButton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.ViewTitle = new System.Windows.Forms.TextBox();
             this.EditDrawingButton = new System.Windows.Forms.Button();
@@ -81,7 +81,6 @@ namespace Exercise
             this.FootingSize.Name = "FootingSize";
             this.FootingSize.Size = new System.Drawing.Size(58, 20);
             this.FootingSize.TabIndex = 1;
-            this.FootingSize.TextChanged += new System.EventHandler(this.FootingSize_TextChanged);
             // 
             // SizeLabel1
             // 
@@ -95,18 +94,18 @@ namespace Exercise
             this.SizeLabel1.TabIndex = 2;
             this.SizeLabel1.Text = "Footing Size";
             // 
-            // button2
+            // buttonCreateRebars
             // 
-            this.structuresExtender.SetAttributeName(this.button2, null);
-            this.structuresExtender.SetAttributeTypeName(this.button2, null);
-            this.structuresExtender.SetBindPropertyName(this.button2, null);
-            this.button2.Location = new System.Drawing.Point(389, 202);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(126, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Create rebars";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.structuresExtender.SetAttributeName(this.buttonCreateRebars, null);
+            this.structuresExtender.SetAttributeTypeName(this.buttonCreateRebars, null);
+            this.structuresExtender.SetBindPropertyName(this.buttonCreateRebars, null);
+            this.buttonCreateRebars.Location = new System.Drawing.Point(389, 202);
+            this.buttonCreateRebars.Name = "buttonCreateRebars";
+            this.buttonCreateRebars.Size = new System.Drawing.Size(126, 23);
+            this.buttonCreateRebars.TabIndex = 3;
+            this.buttonCreateRebars.Text = "Create rebars";
+            this.buttonCreateRebars.UseVisualStyleBackColor = true;
+            this.buttonCreateRebars.Click += new System.EventHandler(this.button2_Click);
             // 
             // ColumnsProfileTextBox
             // 
@@ -225,6 +224,7 @@ namespace Exercise
             this.structuresExtender.SetAttributeTypeName(this.reinforcementCatalog1, null);
             this.reinforcementCatalog1.BackColor = System.Drawing.Color.Transparent;
             this.structuresExtender.SetBindPropertyName(this.reinforcementCatalog1, null);
+            this.reinforcementCatalog1.ButtonText = "albl_Select__";
             this.reinforcementCatalog1.Location = new System.Drawing.Point(247, 48);
             this.reinforcementCatalog1.Name = "reinforcementCatalog1";
             this.reinforcementCatalog1.SelectedRebarBendingRadius = 0D;
@@ -295,6 +295,7 @@ namespace Exercise
             this.structuresExtender.SetAttributeTypeName(this.profileCatalog1, null);
             this.profileCatalog1.BackColor = System.Drawing.Color.Transparent;
             this.structuresExtender.SetBindPropertyName(this.profileCatalog1, null);
+            this.profileCatalog1.ButtonText = "albl_Select__";
             this.profileCatalog1.Location = new System.Drawing.Point(247, 19);
             this.profileCatalog1.Name = "profileCatalog1";
             this.profileCatalog1.SelectedProfile = "";
@@ -332,18 +333,18 @@ namespace Exercise
             this.saveLoad1.TabIndex = 14;
             this.saveLoad1.UserDefinedHelpFilePath = null;
             // 
-            // CreateButton
+            // CreateDrawingButton
             // 
-            this.structuresExtender.SetAttributeName(this.CreateButton, null);
-            this.structuresExtender.SetAttributeTypeName(this.CreateButton, null);
-            this.structuresExtender.SetBindPropertyName(this.CreateButton, null);
-            this.CreateButton.Location = new System.Drawing.Point(389, 231);
-            this.CreateButton.Name = "CreateButton";
-            this.CreateButton.Size = new System.Drawing.Size(126, 23);
-            this.CreateButton.TabIndex = 16;
-            this.CreateButton.Text = "Create...";
-            this.CreateButton.UseVisualStyleBackColor = true;
-            this.CreateButton.Click += new System.EventHandler(this.CreateButton_Click);
+            this.structuresExtender.SetAttributeName(this.CreateDrawingButton, null);
+            this.structuresExtender.SetAttributeTypeName(this.CreateDrawingButton, null);
+            this.structuresExtender.SetBindPropertyName(this.CreateDrawingButton, null);
+            this.CreateDrawingButton.Location = new System.Drawing.Point(389, 231);
+            this.CreateDrawingButton.Name = "CreateDrawingButton";
+            this.CreateDrawingButton.Size = new System.Drawing.Size(126, 23);
+            this.CreateDrawingButton.TabIndex = 16;
+            this.CreateDrawingButton.Text = "Create...";
+            this.CreateDrawingButton.UseVisualStyleBackColor = true;
+            this.CreateDrawingButton.Click += new System.EventHandler(this.CreateButton_Click);
             // 
             // label6
             // 
@@ -395,7 +396,7 @@ namespace Exercise
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Drawings";
             // 
-            // Form1
+            // Form8
             // 
             this.structuresExtender.SetAttributeName(this, null);
             this.structuresExtender.SetAttributeTypeName(this, null);
@@ -404,16 +405,17 @@ namespace Exercise
             this.structuresExtender.SetBindPropertyName(this, null);
             this.ClientSize = new System.Drawing.Size(526, 323);
             this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.CreateButton);
+            this.Controls.Add(this.CreateDrawingButton);
             this.Controls.Add(this.saveLoad1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.buttonCreateRebars);
             this.Controls.Add(this.SizeLabel1);
             this.Controls.Add(this.FootingSize);
             this.Controls.Add(this.CreatePadFootingButton);
-            this.Name = "Form1";
-            this.Text = "DotNetExample";
+            this.Name = "Form8";
+            this.Text = "API Exercise 8";
+            this.TopMost = true;
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -430,7 +432,7 @@ namespace Exercise
         private System.Windows.Forms.Button CreatePadFootingButton;
         private System.Windows.Forms.TextBox FootingSize;
         private System.Windows.Forms.Label SizeLabel1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonCreateRebars;
         private System.Windows.Forms.TextBox ColumnsProfileTextBox;
         private System.Windows.Forms.TextBox SizeTextBox;
         private System.Windows.Forms.TextBox GradeTextBox;
@@ -448,7 +450,7 @@ namespace Exercise
         private System.Windows.Forms.TextBox ColumnsMaterialTextBox;
         private Tekla.Structures.Dialog.UIControls.SaveLoad saveLoad1;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button CreateButton;
+        private System.Windows.Forms.Button CreateDrawingButton;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox ViewTitle;
         private System.Windows.Forms.Button EditDrawingButton;
