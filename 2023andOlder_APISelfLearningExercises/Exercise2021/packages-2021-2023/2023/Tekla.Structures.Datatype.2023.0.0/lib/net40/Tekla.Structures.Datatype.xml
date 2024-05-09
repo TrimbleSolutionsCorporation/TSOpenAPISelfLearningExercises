@@ -1,0 +1,2972 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tekla.Structures.Datatype</name>
+    </assembly>
+    <members>
+        <member name="T:Tekla.Structures.Datatype.Angle">
+            <summary>
+            Provides support for angles using either the current Tekla Structures units, or user defined units
+            </summary>
+        </member>
+        <member name="F:Tekla.Structures.Datatype.Angle.ToRadiansMultiplier">
+            <summary>
+            The constant to obtain radians from a value in degrees
+            </summary>
+        </member>
+        <member name="F:Tekla.Structures.Datatype.Angle.ToDegreesMultiplier">
+            <summary>
+            The constant to obtain degrees from a value in radians
+            </summary>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Angle.#ctor(System.Double)">
+            <summary>
+            Constructs an angle instance with an angle in degrees
+            </summary>
+            <param name="degrees">Angle value in degrees.</param>
+        </member>
+        <member name="T:Tekla.Structures.Datatype.Angle.UnitType">
+            <summary>
+            The angle units.
+            </summary>
+        </member>
+        <member name="F:Tekla.Structures.Datatype.Angle.UnitType.Degrees">
+            <summary>
+            Represents an angle in degrees, with 0 degrees representing the empty angle and 360 the full angle
+            </summary>
+        </member>
+        <member name="F:Tekla.Structures.Datatype.Angle.UnitType.Radians">
+            <summary>
+            Represents an angle in radians, with 0 radians representing the empty angle and 2*PI the full angle
+            </summary>
+        </member>
+        <member name="P:Tekla.Structures.Datatype.Angle.CurrentUnitType">
+            <summary>
+            Gets or sets the Tekla Structures current angle type
+            </summary>
+        </member>
+        <member name="P:Tekla.Structures.Datatype.Angle.DecimalPlaces">
+            <summary>
+            Gets the number of decimal places used for angles.
+            </summary>
+        </member>
+        <member name="P:Tekla.Structures.Datatype.Angle.Degrees">
+            <summary>
+            Gets the angle value in degrees
+            </summary>
+        </member>
+        <member name="P:Tekla.Structures.Datatype.Angle.Radians">
+            <summary>
+            Gets the angle value in radians
+            </summary>
+        </member>
+        <member name="P:Tekla.Structures.Datatype.Angle.CurrentUnitValue">
+            <summary>
+            Gets the value of the angle in the current unit
+            </summary>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Angle.FromDegrees(System.Double)">
+            <summary>
+            Creates an angle from a value in degrees
+            </summary>
+            <param name="degrees">The angle in degrees</param>
+            <returns>An Angle object representing the given angle</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Angle.FromRadians(System.Double)">
+            <summary>
+            Creates an angle from a value in radians
+            </summary>
+            <param name="radians">The angle in radians</param>
+            <returns>An Angle object representing the given angle</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Angle.FromCurrentUnit(System.Double)">
+            <summary>
+            Creates an angle given in the current unit type
+            </summary>
+            <param name="angle">Angle given in the current unit type</param>
+            <returns>An Angle object representing the given angle</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Angle.Parse(System.String)">
+            <summary>
+            Parses the given text as an angle in the current unit type
+            </summary>
+            <param name="text">Text to parse</param>
+            <returns>Resulting angle from the text</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Angle.Parse(System.String,System.IFormatProvider)">
+            <summary>
+            Parses the given text as an angle in the current unit type
+            </summary>
+            <param name="text">Text to parse</param>
+            <param name="formatProvider">Format provider</param>
+            <returns>Resulting angle from the text</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Angle.Parse(System.String,System.IFormatProvider,Tekla.Structures.Datatype.Angle.UnitType)">
+            <summary>
+            Parses the given text as an angle in the current unit type
+            </summary>
+            <param name="text">Text to parse</param>
+            <param name="formatProvider">Format provider</param>
+            <param name="unitType">Input unit type</param>
+            <returns>Resulting angle from the text</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Angle.TryParse(System.String,Tekla.Structures.Datatype.Angle@)">
+            <summary>
+            Parses the given text as an angle in the current unit type
+            </summary>
+            <param name="text">Text to parse</param>
+            <param name="result">Resulting angle if success</param>
+            <returns>True if the conversion succeeds, false otherwise</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Angle.TryParse(System.String,System.IFormatProvider,Tekla.Structures.Datatype.Angle@)">
+            <summary>
+            Parses the given text as an angle in the current unit type
+            </summary>
+            <param name="text">Text to parse</param>
+            <param name="formatProvider">Format provider</param>
+            <param name="result">Resulting angle if success</param>
+            <returns>True if the conversion succeeds, false otherwise</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Angle.TryParse(System.String,System.IFormatProvider,Tekla.Structures.Datatype.Angle.UnitType,Tekla.Structures.Datatype.Angle@)">
+            <summary>
+            Parses the given text as an angle in the current unit type
+            </summary>
+            <param name="text">Text to parse</param>
+            <param name="formatProvider">Format provider</param>
+            <param name="unitType">Input unit type</param>
+            <param name="result">Resulting angle if success</param>
+            <returns>True if the conversion succeeds, false otherwise</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Angle.ToString">
+            <summary>
+            Converts the represented angle to a string in the current units
+            </summary>
+            <returns>This angle as a string</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Angle.ToString(Tekla.Structures.Datatype.Angle.UnitType)">
+            <summary>
+            Converts the represented angle to a string in the given units
+            </summary>
+            <param name="unitType">Input unit type</param>
+            <returns>This angle as a string</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Angle.ToString(System.String,System.IFormatProvider)">
+            <summary>
+            Converts the represented angle to a string with the given parameters
+            </summary>
+            <param name="format">The format string. Can be null.</param>
+            <param name="formatProvider">The number format provider.</param>
+            <returns>This angle as a string</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Angle.ToString(System.String,System.IFormatProvider,Tekla.Structures.Datatype.Angle.UnitType)">
+            <summary>
+            Converts the represented angle to a string with the given parameters
+            </summary>
+            <param name="format">The format string. Can be null.</param>
+            <param name="formatProvider">The number format provider.</param>
+            <param name="angleUnit">The unit type.</param>
+            <returns>This angle as a string</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Angle.CompareTo(Tekla.Structures.Datatype.Angle)">
+            <summary>
+            Compares this angle with another angle
+            </summary>
+            <param name="other">Angle to compare to</param>
+            <returns>Greater than zero if this angle is greater than <paramref name="other"/>, otherwise less than zero
+            if this angle is less than <paramref name="other"/>, otherwise 0 if they are equal</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Angle.Equals(Tekla.Structures.Datatype.Angle)">
+            <summary>
+            Checks for approximate angle equality
+            </summary>
+            <param name="other">Angle to compare to</param>
+            <returns>True if the angles are the same, false otherwise</returns>
+        </member>
+        <member name="T:Tekla.Structures.Datatype.AngleList">
+            <summary>
+            This class provides methods to handle lists of angles
+            </summary>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.AngleList.ToString(System.Collections.Generic.IEnumerable{Tekla.Structures.Datatype.Angle})">
+            <summary>
+            Converts the given angles to a string in the current units
+            </summary>
+            <param name="angleList">List of angles to convert</param>
+            <returns>The angle list as a string</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.AngleList.ToString(System.Collections.Generic.IEnumerable{Tekla.Structures.Datatype.Angle},Tekla.Structures.Datatype.Angle.UnitType)">
+            <summary>
+            Converts the given angles to a string in the given units
+            </summary>
+            <param name="angleList">List of angles to convert</param>
+            <param name="unitType">Input unit type</param>
+            <returns>The angle list as a string</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.AngleList.ToString(System.Collections.Generic.IEnumerable{Tekla.Structures.Datatype.Angle},System.String,System.IFormatProvider)">
+            <summary>
+            Converts the given angles to a string with the given parameters in the current unit
+            </summary>
+            <param name="angleList">List of angles to convert</param>
+            <param name="format">The format string. Can be null.</param>
+            <param name="formatProvider">The number format provider.</param>
+            <returns>The angle as a string</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.AngleList.ToString(System.Collections.Generic.IEnumerable{Tekla.Structures.Datatype.Angle},System.String,System.IFormatProvider,Tekla.Structures.Datatype.Angle.UnitType)">
+            <summary>
+            Converts the given angles to a string with the given parameters in the current unit
+            </summary>
+            <param name="angleList">List of angles to convert</param>
+            <param name="format">The format string. Can be null.</param>
+            <param name="formatProvider">The number format provider.</param>
+            <param name="angleUnit">The unit type.</param>
+            <returns>The angle as a string</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.AngleList.Parse(System.String)">
+            <summary>
+            Parses the given text as an angle list in the current unit type
+            </summary>
+            <param name="text">Text to parse</param>
+            <returns>Resulting angle list from the text</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.AngleList.Parse(System.String,System.IFormatProvider)">
+            <summary>
+            Parses the given text as an angle list in the current unit type
+            </summary>
+            <param name="text">Text to parse</param>
+            <param name="formatProvider">Format provider</param>
+            <returns>Resulting angle list from the text</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.AngleList.Parse(System.String,System.IFormatProvider,Tekla.Structures.Datatype.Angle.UnitType)">
+            <summary>
+            Parses the given text as an angle list in the current unit type
+            </summary>
+            <param name="text">Text to parse</param>
+            <param name="formatProvider">Format provider</param>
+            <param name="unitType">Input unit type</param>
+            <returns>Resulting angle list from the text</returns>
+        </member>
+        <member name="T:Tekla.Structures.Datatype.Boolean">
+            <summary>
+            The Boolean datatype.
+            </summary>
+            <remarks>
+            The purpose of this type is to enable dialog field binding with StructuresExtender.
+            You don't need to use this type in your own programs.
+            </remarks>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Boolean.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the structure.
+            </summary>
+            <param name="boolValue">The boolean value.</param>
+        </member>
+        <member name="P:Tekla.Structures.Datatype.Boolean.Value">
+            <summary>
+            Gets or sets the boolean value.
+            </summary>
+        </member>
+        <member name="F:Tekla.Structures.Datatype.Boolean.boolValue">
+            <summary>
+            Boolean value.
+            </summary>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Boolean.GetSchema">
+            <exclude/>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Boolean.ReadXml(System.Xml.XmlReader)">
+            <exclude/>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Boolean.WriteXml(System.Xml.XmlWriter)">
+            <exclude/>
+        </member>
+        <member name="T:Tekla.Structures.Datatype.BooleanConverter">
+            <summary>
+            The BooleanConverter class converts types to and from the boolean type.
+            </summary>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.BooleanConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Checks whether the conversion can be made from the source type to the boolean type.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="sourceType">The type to convert from.</param>
+            <returns>True if possible, false if not possible.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.BooleanConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Checks whether the conversion can be made from the boolean type to the destination type.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="destinationType">The type to convert to.</param>
+            <returns>True if possible, false if not possible.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.BooleanConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            Converts an object from the given culture to the boolean type.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="culture">The culture.</param>
+            <param name="value">The object to be converted.</param>
+            <returns>The new boolean object.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.BooleanConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            Converts an object from the boolean type to the given destination type.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="culture">The target culture.</param>
+            <param name="value">The boolean object to be converted.</param>
+            <param name="destinationType">The destination type.</param>
+            <returns>The given boolean object converted to the new type.</returns>
+        </member>
+        <member name="T:Tekla.Structures.Datatype.Constants">
+            <summary>
+            The Constants class is a repository for constants used by the Tekla.Structures.Datatype.* types.
+            </summary>
+        </member>
+        <member name="F:Tekla.Structures.Datatype.Constants.XS_DEFAULT">
+            <summary>
+            The value of an uninitialized Tekla Structures variable.
+            </summary>
+        </member>
+        <member name="T:Tekla.Structures.Datatype.Distance">
+             <summary>
+             The Distance datatype.
+             </summary>
+             <remarks>
+             <see cref="T:Tekla.Structures.Datatype.Distance"/> stores, parses and formats distances in real world units.
+             </remarks>
+             <example>
+             <code>
+             using Tekla.Structures.Datatype;
+            
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        // Here we have an array of values in millimeters. These values may have come
+                        // from the Tekla Structures Open API (which assumes all distances to be in
+                        // millimeters) or from some other data source.
+                        double[] valuesInMillimeters = { 30.2, 40, 20 };
+            
+                        // Here we have an array of values in inches. These may have come from the user
+                        // interface or some other data source.
+                        double[] valuesInInches = { 2, 4.5, 5 };
+            
+            
+                        // For this demonstration, we convert the values into millimeters and store
+                        // the sum of the distances into this array.
+                        Distance[] distances = new Distance[3];
+            
+                        for(int i = 0; i &lt; distances.Length; i++)
+                        {
+                            // The default unit type is millimeter.
+                            Distance value1 = new Distance(valuesInMillimeters[i]);
+            
+                            // We need to explicitly define the unit type for inches.
+                            Distance value2 = new Distance(valuesInInches[i], Distance.UnitType.Inch);
+            
+                            // To perform calculations, we need to use the same unit type for both
+                            // distances. In this case, we use millimeters.
+                            distances[i].Millimeters = value1.Millimeters + value2.Millimeters;
+                        }
+            
+                        // While the Distance.ConvertTo method allows you to convert distances to other
+                        // distance units, it is usually better to keep all distances as instances of
+                        // Distance type and perform conversions only when absolutely necessary.
+                        //
+                        // Distance provides extensive support for formatting and parsing distances, so
+                        // you usually need the conversion only when writing to some external data store.
+                        //
+                        // To demonstrate conversion, we assume that the distance values need to be
+                        // converted to inches and stored in a database.
+            
+                        double[] valuesInInchesToStoreInDatabase = new double[3];
+            
+                        for(int i = 0; i &lt; distances.Length; i++)
+                        {
+                            // We perform the conversion with the Distance.ConvertTo method just before
+                            // storing the values. All other distances should be kept as instances of
+                            // Distance type.
+                            valuesInInchesToStoreInDatabase[i] = distances[i].ConvertTo(Distance.UnitType.Inch);
+                        }
+            
+                        // For the next demonstration, we assume that the program wants to use inches for
+                        // all distances. To do this, we set the current unit type. Current unit type
+                        // should be treated like locale; set it only once at the start of the program.
+                        Distance.CurrentUnitType = Distance.UnitType.Inch;
+            
+                        // Create new Distance instance. The default unit is millimeters, even if the
+                        // current unit type is set to inches, so we still need to specify the unit type.
+                        Distance distance = new Distance(5, Distance.UnitType.Inch);
+            
+                        // We have some distance in inches. This data may come from the user interface
+                        // or some other data source.
+                        double someDistanceInInches = 2;
+            
+                        // To perform calculations in inches, we use the Distance.Value property to
+                        // get the distance in the current distance units. This way the program can
+                        // set the unit type once (usually at the start) and use the unit type for
+                        // all distances.
+                        double sumOfDistancesInInches = someDistanceInInches + distance.Value;
+            
+                        // If the current unit type is changed during the run time, the above
+                        // calculation might use mismatching units and return incorrect result.
+                        // To prevent this, follow these simple rules:
+            
+                        // 1) Use Distance type for all distances, specifying the unit when converting from plain values.
+                        Distance someDistance = new Distance(someDistanceInInches, Distance.UnitType.Inch);
+            
+                        // 2) Perform calculations using the Distance.Millimeters property.
+                        Distance sumOfDistances = new Distance(someDistance.Millimeters + someDistance.Millimeters);
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Distance.#ctor(System.Double)">
+             <summary>
+             Initializes a new instance of the structure.
+             </summary>
+             <param name="millimeters">The distance in millimeters.</param>
+             <example>
+             This example shows how to construct a new <see cref="T:Tekla.Structures.Datatype.Distance"/> instance.
+             <code>
+             using Tekla.Structures.Datatype;
+            
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        Distance distance = new Distance(30.2);
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Distance.#ctor(System.Double,Tekla.Structures.Datatype.Distance.UnitType)">
+             <summary>
+             Initializes a new instance of the structure.
+             </summary>
+             <param name="distance">The distance in the specified units.</param>
+             <param name="unitType">The distance unit type.</param>
+             <exception cref="T:System.ArgumentException">Thrown if an invalid unit type is specified.</exception>
+             <example>
+             This example shows how to construct a new <see cref="T:Tekla.Structures.Datatype.Distance"/> instance with a specific unit type.
+             <code>
+             using Tekla.Structures.Datatype;
+            
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        Distance distance = new Distance(2, Distance.UnitType.Inch);
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Distance.GetHashCode">
+            <summary>
+            Returns the hash code for the current instance.
+            </summary>
+            <returns>A 32-bit signed integer that is the hash code for the current instance.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Distance.Equals(System.Object)">
+            <summary>
+            Indicates whether the current instance and the specified object are equal.
+            </summary>
+            <param name="obj">The object to be compared with the current object.</param>
+            <returns>True if the specified object and the current instance are of the same type and represent the same value; otherwise, false.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Distance.Equals(Tekla.Structures.Datatype.Distance)">
+            <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <param name="other">The object to be compared with the current object.</param>
+            <returns>True if the current object is equal to the other object; otherwise, false.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Distance.CompareTo(Tekla.Structures.Datatype.Distance)">
+            <summary>
+            Compares the current object with another object of the same type.
+            </summary>
+            <param name="other">The object to be compared with the current object.</param>
+            <returns>
+            <para>A 32-bit signed integer that indicates the relative order of the objects being compared.</para>
+            <para>The return value has the following meanings:</para>
+            <list type="table">
+            <listheader>
+            <term>Value</term>
+            <description>Meaning</description>
+            </listheader>
+            <item>
+            <term>Less than zero</term>
+            <description>The current object is less than the other object.</description>
+            </item>
+            <item>
+            <term>Zero</term>
+            <description>The current object is equal to the other object.</description>
+            </item>
+            <item>
+            <term>Greater than zero</term>
+            <description>The current object is greater than the other object.</description>
+            </item>
+            </list>
+            </returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Distance.ConvertTo(Tekla.Structures.Datatype.Distance.UnitType)">
+             <summary>
+             Converts the distance to the specified units.
+             </summary>
+             <param name="unitType">The distance unit type.</param>
+             <returns>The distance in the specified units.</returns>
+             <example>
+             This example shows how to convert a <see cref="T:Tekla.Structures.Datatype.Distance"/> instance into real
+             world units.
+             <code>
+             using Tekla.Structures.Datatype;
+            
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        // For this demonstration, we'll format 300.2 millimeters.
+                        Distance distance = new Distance(300.2);
+            
+                        double distanceInInches = distance.ConvertTo(Distance.UnitType.Inch);
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Distance.FromDecimalString(System.String)">
+             <summary>
+             Creates a distance from a decimal string representation.
+             </summary>
+             <param name="text">The distance string.</param>
+             <returns>The representation of the specified distance.</returns>
+             <exception cref="T:System.FormatException">Thrown if the text does not represent a distance.</exception>
+             <example>
+             This example shows how to parse a <see cref="T:Tekla.Structures.Datatype.Distance"/> instance from a decimal
+             string.
+             <code>
+             using Tekla.Structures.Datatype;
+            
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        Distance distance = Distance.FromDecimalString("3");
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Distance.FromDecimalString(System.String,System.IFormatProvider)">
+             <summary>
+             Creates a distance from a decimal string representation.
+             </summary>
+             <param name="text">The distance string.</param>
+             <param name="formatProvider">The number format provider.</param>
+             <returns>The representation of the specified distance.</returns>
+             <exception cref="T:System.FormatException">Thrown if the text does not represent a distance.</exception>
+             <example>
+             This example shows how to specify a format provider when parsing a
+             <see cref="T:Tekla.Structures.Datatype.Distance"/> instance from a decimal string.
+             <code>
+             using Tekla.Structures.Datatype;
+             using System.Globalization;
+            
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        Distance distance = Distance.FromDecimalString("3.2", CultureInfo.InvariantCulture);
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Distance.FromDecimalString(System.String,System.IFormatProvider,Tekla.Structures.Datatype.Distance.UnitType)">
+             <summary>
+             Creates a distance from a decimal string representation.
+             </summary>
+             <param name="text">The distance string.</param>
+             <param name="formatProvider">The number format provider.</param>
+             <param name="unitType">The unit type of the distance to parse.</param>
+             <returns>The representation of the specified distance.</returns>
+             <exception cref="T:System.FormatException">Thrown if the text does not represent a distance.</exception>
+             <exception cref="T:System.ArgumentException">Thrown if an invalid unit type is specified.</exception>
+             <example>
+             This example shows how to specify a format provider and a unit type when parsing a
+             <see cref="T:Tekla.Structures.Datatype.Distance"/> instance from a decimal string.
+             <code>
+             using Tekla.Structures.Datatype;
+             using System.Globalization;
+            
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        Distance distance = Distance.FromDecimalString("3.2", CultureInfo.InvariantCulture, Distance.UnitType.Inch);
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Distance.ToDecimalString">
+             <summary>
+             Converts the distance to a decimal string representation.
+             </summary>
+             <returns>The string representation of the distance.</returns>
+             <example>
+             This example shows how to convert a <see cref="T:Tekla.Structures.Datatype.Distance"/> instance into a
+             decimal string.
+             <code>
+             using Tekla.Structures.Datatype;
+            
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        // For this demonstration, we'll format 300.2 millimeters.
+                        Distance distance = new Distance(300.2);
+            
+                        string formattedString = distance.ToDecimalString();
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Distance.ToDecimalString(System.String)">
+             <summary>
+             Converts the distance to a decimal string representation.
+             </summary>
+             <param name="format">The format string.</param>
+             <returns>The string representation of the distance.</returns>
+             <example>
+             This example shows how to specify a number format when converting a
+             <see cref="T:Tekla.Structures.Datatype.Distance"/> instance into a decimal string.
+             <code>
+             using Tekla.Structures.Datatype;
+            
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        // For this demonstration, we'll format 300.2 millimeters.
+                        Distance distance = new Distance(300.2);
+            
+                        string formattedString = distance.ToDecimalString("0.00");
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Distance.ToDecimalString(System.IFormatProvider)">
+             <summary>
+             Converts the distance to a decimal string representation.
+             </summary>
+             <param name="formatProvider">The number format provider.</param>
+             <returns>The string representation of the distance.</returns>
+             <example>
+             This example shows how to specify a format provider when converting a
+             <see cref="T:Tekla.Structures.Datatype.Distance"/> instance into a decimal string.
+             <code>
+             using Tekla.Structures.Datatype;
+             using System.Globalization;
+            
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        // For this demonstration, we'll format 300.2 millimeters.
+                        Distance distance = new Distance(300.2);
+            
+                        string formattedString = distance.ToDecimalString(CultureInfo.InvariantCulture);
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Distance.ToDecimalString(System.String,System.IFormatProvider)">
+             <summary>
+             Converts the distance to a decimal string representation.
+             </summary>
+             <param name="format">The format string.</param>
+             <param name="formatProvider">The number format provider.</param>
+             <returns>The string representation of the distance.</returns>
+             <example>
+             This example shows how to specify a number format and a format provider when
+             converting a <see cref="T:Tekla.Structures.Datatype.Distance"/> instance into a decimal string.
+             <code>
+             using Tekla.Structures.Datatype;
+             using System.Globalization;
+            
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        // For this demonstration, we'll format 300.2 millimeters.
+                        Distance distance = new Distance(300.2);
+            
+                        string formattedString = distance.ToDecimalString("0.00", CultureInfo.InvariantCulture);
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Distance.ToDecimalString(System.String,System.IFormatProvider,Tekla.Structures.Datatype.Distance.UnitType)">
+             <summary>
+             Converts the distance to a decimal string representation.
+             </summary>
+             <param name="format">The format string.</param>
+             <param name="formatProvider">The number format provider.</param>
+             <param name="unitType">The unit type.</param>
+             <returns>The string representation of the distance.</returns>
+             <exception cref="T:System.ArgumentException">Thrown if an invalid unit type is specified.</exception>
+             <example>
+             This example shows how to specify a number format, a format provider and a unit
+             type when converting a <see cref="T:Tekla.Structures.Datatype.Distance"/> instance into a decimal string.
+             <code>
+             using Tekla.Structures.Datatype;
+             using System.Globalization;
+            
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        Distance.UseUnitsInDecimalString = true;
+            
+                        // For this demonstration, we'll format 300.2 millimeters.
+                        Distance distance = new Distance(300.2);
+            
+                        // Even if the UseFractionalFormat is set to true, we can still get the decimal representation.
+                        string decimalString = distance.ToDecimalString("0.00", CultureInfo.InvariantCulture, Distance.UnitType.Inch);
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Distance.FromFractionalFeetAndInchesString(System.String)">
+             <summary>
+             Creates a distance from a string representation of fractional feet and inches.
+             </summary>
+             <param name="text">The distance string.</param>
+             <returns>The representation of the specified distance.</returns>
+             <exception cref="T:System.FormatException">Thrown if the text does not represent a distance.</exception>
+             <example>
+             This example shows how to parse a <see cref="T:Tekla.Structures.Datatype.Distance"/> instance from a fractional
+             string representation of feet and inches.
+             <code>
+             using Tekla.Structures.Datatype;
+            
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        Distance distance = Distance.FromFractionalFeetAndInchesString("3' 3/4");
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Distance.FromFractionalFeetAndInchesString(System.String,System.IFormatProvider,Tekla.Structures.Datatype.Distance.UnitType)">
+             <summary>
+             Creates a distance from a string representation of fractional feet and inches.
+             </summary>
+             <param name="text">The distance string.</param>
+             <param name="formatProvider">The number format provider.</param>
+             <param name="unitType">The unit type of the distance to parse.</param>
+             <returns>The representation of the specified distance.</returns>
+             <exception cref="T:System.FormatException">Thrown if the text does not represent a distance.</exception>
+             <example>
+             This example shows how to specify a format provider and a unit type when parsing
+             a <see cref="T:Tekla.Structures.Datatype.Distance"/> instance from a fractional string representation of
+             feet and inches.
+             <code>
+             using Tekla.Structures.Datatype;
+             using System.Globalization;
+            
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        Distance distance = Distance.FromFractionalFeetAndInchesString("3' 3/4", CultureInfo.InvariantCulture, Distance.UnitType.Inch);
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Distance.ToFractionalFeetAndInchesString">
+             <summary>
+             Creates a string representation of the distance in feet and inches.
+             </summary>
+             <returns>The string representation of the distance.</returns>
+             <example>
+             This example shows how to convert a <see cref="T:Tekla.Structures.Datatype.Distance"/> instance into a
+             fractional string representation of feet and inches.
+             <code>
+             using Tekla.Structures.Datatype;
+            
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        // For this demonstration, we'll format 300.2 millimeters.
+                        Distance distance = new Distance(300.2);
+            
+                        string formattedString = distance.ToFractionalFeetAndInchesString();
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Distance.ToFractionalFeetAndInchesString(System.IFormatProvider)">
+             <summary>
+             Creates a string representation of the distance in feet and inches.
+             </summary>
+             <param name="formatProvider">The number format provider.</param>
+             <returns>The string representation of the distance.</returns>
+             <example>
+             This example shows how to specify a format provider when converting a
+             <see cref="T:Tekla.Structures.Datatype.Distance"/> instance into a fractional string representation
+             of feet and inches.
+             <code>
+             using Tekla.Structures.Datatype;
+             using System.Globalization;
+            
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        // For this demonstration, we'll format 300.2 millimeters.
+                        Distance distance = new Distance(300.2);
+            
+                        string formattedString = distance.ToFractionalFeetAndInchesString(CultureInfo.InvariantCulture);
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Distance.ToFractionalInchesString">
+             <summary>
+             Creates a string representation of the distance in inches.
+             </summary>
+             <returns>The string representation of the distance.</returns>
+             <example>
+             This example shows how to convert a <see cref="T:Tekla.Structures.Datatype.Distance"/> instance into a
+             fractional string representation of inches.
+             <code>
+             using Tekla.Structures.Datatype;
+            
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        // For this demonstration, we'll format 300.2 millimeters.
+                        Distance distance = new Distance(300.2);
+            
+                        string formattedString = distance.ToFractionalInchesString();
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Distance.ToFractionalInchesString(System.IFormatProvider)">
+             <summary>
+             Creates a string representation of the distance in inches.
+             </summary>
+             <param name="formatProvider">The number format provider.</param>
+             <returns>The string representation of the distance.</returns>
+             <example>
+             This example shows how to specify a format provider when converting a
+             <see cref="T:Tekla.Structures.Datatype.Distance"/> instance into a fractional string representation
+             of inches.
+             <code>
+             using Tekla.Structures.Datatype;
+             using System.Globalization;
+            
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        // For this demonstration, we'll format 300.2 millimeters.
+                        Distance distance = new Distance(300.2);
+            
+                        string formattedString = distance.ToFractionalInchesString(CultureInfo.InvariantCulture);
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Distance.Parse(System.String)">
+             <summary>
+             Parses a distance from a string representation using the current unit type and culture.
+             </summary>
+             <param name="text">The text to parse.</param>
+             <returns>The representation of the specified distance.</returns>
+             <exception cref="T:System.FormatException">Thrown if the text does not represent a distance.</exception>
+             <example>
+             This example shows how to parse a <see cref="T:Tekla.Structures.Datatype.Distance"/> instance from a string.
+             <code>
+             using Tekla.Structures.Datatype;
+            
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        Distance distance = Distance.Parse("3");
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Distance.Parse(System.String,System.IFormatProvider)">
+             <summary>
+             Parses a distance from a string representation using the current unit type and the given culture.
+             </summary>
+             <param name="text">The text to parse.</param>
+             <param name="formatProvider">The number format provider.</param>
+             <returns>The representation of the specified distance.</returns>
+             <exception cref="T:System.FormatException">Thrown if the text does not represent a distance.</exception>
+             <example>
+             This example shows how to specify a format provider when parsing a
+             <see cref="T:Tekla.Structures.Datatype.Distance"/> instance from a string.
+             <code>
+             using Tekla.Structures.Datatype;
+             using System.Globalization;
+            
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        // Current unit type controls the default unit type used in parsing.
+                        // The default unit is millimeter.
+                        Distance.CurrentUnitType = Distance.UnitType.Millimeter;
+            
+                        // Tekla Structures uses dot as the decimal separator in all locales.
+                        // This will be parsed as 30.2 millimeters.
+                        Distance distanceInMillimeters = Distance.Parse("30.2", CultureInfo.InvariantCulture);
+            
+                        // If the distance contains the unit, the distance is converted automatically.
+                        // This will be parsed as 30.2 meters.
+                        Distance distanceInMeters = Distance.Parse("30.2m", CultureInfo.InvariantCulture);
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Distance.Parse(System.String,System.IFormatProvider,Tekla.Structures.Datatype.Distance.UnitType)">
+             <summary>
+             Parses a distance from a string representation using the given unit type and culture.
+             </summary>
+             <param name="text">The text to parse.</param>
+             <param name="formatProvider">The number format provider.</param>
+             <param name="unitType">The unit type of the distance to parse. Determines the parsing process.</param>
+             <returns>The representation of the specified distance.</returns>
+             <exception cref="T:System.FormatException">Thrown if the text does not represent a distance.</exception>
+             <exception cref="T:System.ArgumentException">Thrown if an invalid unit type is specified.</exception>
+             <example>
+             This example shows how to specify a format provider and a unit type when parsing
+             a <see cref="T:Tekla.Structures.Datatype.Distance"/> instance from a string.
+             <code>
+             using Tekla.Structures.Datatype;
+             using System.Globalization;
+            
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        // We can override the current unit type to force the parsing to perform automatic unit conversion.
+                        // This will be parsed as 3.2 inches.
+                        Distance distanceInInches = Distance.Parse("3.2", CultureInfo.InvariantCulture, Distance.UnitType.Inch);
+            
+                        // When using feet or inches as the distance unit, the fractional format is supported as well.
+                        // This will be parsed as 3/4 inches.
+                        Distance InchesInFractionalFormat = Distance.Parse("3/4", CultureInfo.InvariantCulture, Distance.UnitType.Inch);
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Distance.TryParse(System.String,Tekla.Structures.Datatype.Distance@)">
+             <summary>
+             Attempts to parse a distance from a string representation using the current units.
+             </summary>
+             <param name="text">The text to parse.</param>
+             <param name="result">The output variable for the result.</param>
+             <returns>A boolean value indicating whether the operation succeeded.</returns>
+             <example>
+             This example shows how to attempt to parse a <see cref="T:Tekla.Structures.Datatype.Distance"/> instance
+             from a string.
+             <code>
+             using Tekla.Structures.Datatype;
+            
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        Distance.CurrentUnitType = Distance.UnitType.Millimeter;
+            
+                        // If the string can not be parsed, an exception is thrown. To prevent the
+                        // exception we can use the Distance.TryParse instead. We'll use this variable
+                        // to hold the parsed value.
+                        Distance distance;
+            
+                        // Distance.TryParse works just like the Distance.Parse method, except the method
+                        // returns a boolean value indicating whether the string was parsed and takes an
+                        // output variable for holding the result.
+                        bool parsed = Distance.TryParse("3", out distance);
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Distance.TryParse(System.String,System.IFormatProvider,Tekla.Structures.Datatype.Distance@)">
+             <summary>
+             Attempts to parse a distance from a string representation using the current units.
+             </summary>
+             <param name="text">The text to parse.</param>
+             <param name="formatProvider">The number format provider.</param>
+             <param name="result">The output variable for the result.</param>
+             <returns>A boolean value indicating whether the operation succeeded.</returns>
+             <example>
+             This example shows how to specify a format provider when attempting to parse
+             a <see cref="T:Tekla.Structures.Datatype.Distance"/> instance from a string.
+             <code>
+             using Tekla.Structures.Datatype;
+             using System.Globalization;
+            
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        Distance.CurrentUnitType = Distance.UnitType.Millimeter;
+            
+                        // If the string can not be parsed, an exception is thrown. To prevent the
+                        // exception we can use the Distance.TryParse instead. We'll use this variable
+                        // to hold the parsed value.
+                        Distance distance;
+            
+                        // Distance.TryParse works just like the Distance.Parse method, except the method
+                        // returns a boolean value indicating whether the string was parsed and takes an
+                        // output variable for holding the result.
+                        bool parsed = Distance.TryParse("30.2", CultureInfo.InvariantCulture, out distance);
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Distance.TryParse(System.String,System.IFormatProvider,Tekla.Structures.Datatype.Distance.UnitType,Tekla.Structures.Datatype.Distance@)">
+             <summary>
+             Attempts to parse a distance from a string representation using the current units.
+             </summary>
+             <param name="text">The text to parse.</param>
+             <param name="formatProvider">The number format provider.</param>
+             <param name="defaultUnitType">The default unit type if the unit cannot be determined.</param>
+             <param name="result">The output variable for the result.</param>
+             <returns>A boolean value indicating whether the operation succeeded.</returns>
+             <exception cref="T:System.ArgumentException">Thrown if an invalid unit type is specified.</exception>
+             <example>
+             This example shows how to specify a format provider and a unit type when
+             attempting to parse a <see cref="T:Tekla.Structures.Datatype.Distance"/> instance from a string.
+             <code>
+             using Tekla.Structures.Datatype;
+             using System.Globalization;
+            
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        Distance.CurrentUnitType = Distance.UnitType.Millimeter;
+            
+                        // If the string can not be parsed, an exception is thrown. To prevent the
+                        // exception we can use the Distance.TryParse instead. We'll use this variable
+                        // to hold the parsed value.
+                        Distance distance;
+            
+                        // Distance.TryParse works just like the Distance.Parse method, except the method
+                        // returns a boolean value indicating whether the string was parsed and takes an
+                        // output variable for holding the result.
+                        bool parsed = Distance.TryParse("30.2", CultureInfo.InvariantCulture, Distance.UnitType.Inch, out distance);
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Distance.ToString">
+             <summary>
+             Creates a string representation of the distance.
+             </summary>
+             <returns>The string representation of the distance using CultureInfo.InvariantCulture.</returns>
+             <example>
+             This example shows how to convert a <see cref="T:Tekla.Structures.Datatype.Distance"/> instance to a string.
+             <code>
+             using Tekla.Structures.Datatype;
+            
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        // For this demonstration, we'll format 300.2 millimeters.
+                        Distance distance = new Distance(300.2);
+            
+                        // The default format uses the current unit type, current culture info and default number format.
+                        string formattedString = distance.ToString();
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Distance.ToString(System.String)">
+             <summary>
+             Creates a string representation of the distance.
+             </summary>
+             <param name="format">The format string.</param>
+             <returns>The string representation of the distance.</returns>
+             <example>
+             This example shows how to specify a number format when converting a
+             <see cref="T:Tekla.Structures.Datatype.Distance"/> instance to a string.
+             <code>
+             using Tekla.Structures.Datatype;
+            
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        // For this demonstration, we'll format 300.2 millimeters.
+                        Distance distance = new Distance(300.2);
+            
+                        // We can use the number format string to specify the precision. In this case, we use two decimal places.
+                        string formattedString = distance.ToString("0.00");
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Distance.ToString(System.IFormatProvider)">
+             <summary>
+             Creates a string representation of the distance.
+             </summary>
+             <param name="formatProvider">The number format provider.</param>
+             <returns>The string representation of the distance.</returns>
+             <example>
+             This example shows how to specify a format provider when converting a
+             <see cref="T:Tekla.Structures.Datatype.Distance"/> instance to a string.
+             <code>
+             using Tekla.Structures.Datatype;
+             using System.Globalization;
+            
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        // For this demonstration, we'll format 300.2 millimeters.
+                        Distance distance = new Distance(300.2);
+            
+                        // Tekla Structures uses dot as the decimal separator in all locales.
+                        string formattedString = distance.ToString(CultureInfo.InvariantCulture);
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Distance.ToString(System.String,System.IFormatProvider)">
+             <summary>
+             Creates a string representation of the distance.
+             </summary>
+             <param name="format">The format string.</param>
+             <param name="formatProvider">The number format provider.</param>
+             <returns>The string representation of the distance.</returns>
+             <example>
+             This example shows how to specify a number format and a format provider when
+             converting a <see cref="T:Tekla.Structures.Datatype.Distance"/> instance to a string.
+             <code>
+             using Tekla.Structures.Datatype;
+             using System.Globalization;
+            
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        // For this demonstration, we'll format 300.2 millimeters.
+                        Distance distance = new Distance(300.2);
+            
+                        string formattedString = distance.ToString("0.00", CultureInfo.InvariantCulture);
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Distance.ToString(System.String,System.IFormatProvider,Tekla.Structures.Datatype.Distance.UnitType)">
+             <summary>
+             Creates a string representation of the distance.
+             </summary>
+             <param name="format">The format string.</param>
+             <param name="formatProvider">The number format provider.</param>
+             <param name="unitType">The unit type.</param>
+             <returns>The string representation of the distance.</returns>
+             <exception cref="T:System.ArgumentException">Thrown if an invalid unit type is specified.</exception>
+             <example>
+             This example shows how to specify a number format, a format provider and a unit
+             type when converting a <see cref="T:Tekla.Structures.Datatype.Distance"/> instance to a string.
+             <code>
+             using Tekla.Structures.Datatype;
+             using System.Globalization;
+            
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        // For this demonstration, we'll format 300.2 millimeters.
+                        Distance distance = new Distance(300.2);
+            
+                        // We can override the unit type to display the distance in inches.
+                        string defaultFormatInInches = distance.ToString(null, null, Distance.UnitType.Inch);
+            
+                        // With the number format and culture info we can get fully customized representation.
+                        string customizedFormatInInches = distance.ToString("0.00", CultureInfo.InvariantCulture,
+                                                        Distance.UnitType.Inch);
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Distance.ParseFractionalDouble(System.String,System.IFormatProvider,Tekla.Structures.Datatype.Distance.UnitType)">
+            <summary>
+            Parses a fractional representation of a double precision floating point number.
+            </summary>
+            <param name="text">The text to parse.</param>
+            <param name="formatProvider">The number format provider.</param>
+            <param name="unitType">The unit type to parse to.</param>
+            <returns>The parsed double value.</returns>
+            <exception cref="T:System.FormatException">Thrown if the text does not represent a double value.</exception>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Distance.ConvertToMillimeters(System.Double,Tekla.Structures.Datatype.Distance.UnitType)">
+            <summary>
+            Converts the specified distance units to millimeters.
+            </summary>
+            <param name="distance">The distance in specified units.</param>
+            <param name="unitType">The distance unit type.</param>
+            <returns>The converted distance.</returns>
+            <exception cref="T:System.ArgumentException">Thrown if an invalid unit type is specified.</exception>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Distance.ConvertMillimetersTo(System.Double,Tekla.Structures.Datatype.Distance.UnitType)">
+            <summary>
+            Converts millimeters to the specified distance units.
+            </summary>
+            <param name="millimeters">The distance in millimeters.</param>
+            <param name="unitType">The target unit type.</param>
+            <returns>The converted distance.</returns>
+            <exception cref="T:System.ArgumentException">Thrown if an invalid unit type is specified.</exception>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Distance.ParseNumberAsInt(System.String,System.Globalization.NumberStyles,System.IFormatProvider)">
+            <summary>
+            Try and parse the number string into integer.
+            </summary>
+            <param name="value">The string value to be parsed.</param>
+            <param name="style">The number style.</param>
+            <param name="format">The format provider.</param>
+            <returns>The parsed integer value as a <see cref="T:Tekla.Structures.Datatype.Double"/>.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Distance.ParseNumberAsDouble(System.String,System.Globalization.NumberStyles,System.IFormatProvider)">
+            <summary>
+            Parse number as double.
+            </summary>
+            <param name="value">The string value to be parsed.</param>
+            <param name="style">The number style.</param>
+            <param name="format">The format provider.</param>
+            <returns>The parsed value as a <see cref="T:Tekla.Structures.Datatype.Double"/>.</returns>
+        </member>
+        <member name="P:Tekla.Structures.Datatype.Distance.CurrentUnitType">
+             <summary>
+             Gets or sets the current unit type.
+             </summary>
+             <value>
+             The current unit type.
+             </value>
+             <example>
+             This example shows how to specify the current unit type.
+             <code>
+             using Tekla.Structures.Datatype;
+             using System.Globalization;
+            
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        // Current unit type controls the default unit type used in parsing.
+                        Distance.CurrentUnitType = Distance.UnitType.Millimeter;
+                        Distance distance = Distance.Parse("30.2", CultureInfo.InvariantCulture);
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="P:Tekla.Structures.Datatype.Distance.UseUnitsInDecimalString">
+             <summary>
+             Gets or sets a boolean value indicating whether to use units in the decimal string representation.
+             </summary>
+             <value>
+             Indicates whether to use units in the decimal string representation.
+             </value>
+             <example>
+             This example shows how to use the UseUnitsInDecimalString property.
+             <code>
+             using Tekla.Structures.Datatype;
+             using System.Globalization;
+            
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        // UseUnitsInDecimalString controls whether the unit type is shown in the decimal string representation.
+                        Distance.UseUnitsInDecimalString = true;
+            
+                        // For this demonstration, we'll format 300.2 millimeters.
+                        Distance distance = new Distance(300.2);
+                        string formattedString = distance.ToDecimalString("0.00", CultureInfo.InvariantCulture);
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="P:Tekla.Structures.Datatype.Distance.UseFractionalFormat">
+             <summary>
+             Gets or sets a boolean value indicating whether to use the fractional format for US imperial units.
+             </summary>
+             <value>
+             Indicates whether to use the fractional format for US imperial units.
+             </value>
+             <example>
+             <code>
+             using Tekla.Structures.Datatype;
+             using System.Globalization;
+            
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        // UseFractionalFormat controls whether the feet and inches are formatted using the fractional representation.
+                        Distance.UseFractionalFormat = true;
+            
+                        // For this demonstration, we'll format 300.2 millimeters.
+                        Distance distance = new Distance(300.2);
+                        string formattedString = distance.ToString("0.00", CultureInfo.InvariantCulture, Distance.UnitType.Inch);
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="P:Tekla.Structures.Datatype.Distance.Millimeters">
+             <summary>
+             Gets or sets the distance in millimeters.
+             </summary>
+             <value>
+             The distance in millimeters.
+             </value>
+             <example>
+             This example shows how to perform calculations with distances in different units.
+             <code>
+             using Tekla.Structures.Datatype;
+            
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        // The default unit type is millimeter.
+                        Distance value1 = new Distance(30);
+            
+                        // Other unit types must be specified explicitly.
+                        Distance value2 = new Distance(2, Distance.UnitType.Inch);
+            
+                        // Perform sum calculation using millimeters for both distances.
+                        Distance sumOfDistances = new Distance(value1.Millimeters + value2.Millimeters);
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="P:Tekla.Structures.Datatype.Distance.Value">
+             <summary>
+             Gets or sets the distance value in current units.
+             </summary>
+             <value>
+             The distance value in current units.
+             </value>
+             <example>
+             This example shows how to perform calculations with distances in different units.
+             <code>
+             using Tekla.Structures.Datatype;
+            
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        // The default unit type is millimeter.
+                        Distance value1 = new Distance(30);
+            
+                        // Other unit types must be specified explicitly.
+                        Distance value2 = new Distance(2, Distance.UnitType.Inch);
+            
+                        // Perform sum calculation using the same units for both distances.
+                        Distance sumOfDistances = new Distance(value1.Value + value2.Value, Distance.CurrentUnitType);
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="P:Tekla.Structures.Datatype.Distance.DecimalPlaces">
+            <summary>
+            Gets the number of decimal places used for distances.
+            </summary>
+            <value>
+            Number of decimal places used for distances.
+            </value>
+        </member>
+        <member name="F:Tekla.Structures.Datatype.Distance.FeetPerInch">
+            <summary>
+            Conversion factor from inches to feet.
+            </summary>
+        </member>
+        <member name="F:Tekla.Structures.Datatype.Distance.InchesPerFoot">
+            <summary>
+            Conversion factor from feet to inches.
+            </summary>
+        </member>
+        <member name="F:Tekla.Structures.Datatype.Distance.InchesPerMillimeter">
+            <summary>
+            Conversion factor from millimeters to inches.
+            </summary>
+        </member>
+        <member name="F:Tekla.Structures.Datatype.Distance.MillimetersPerInch">
+            <summary>
+            Conversion factor from inches to millimeters.
+            </summary>
+        </member>
+        <member name="F:Tekla.Structures.Datatype.Distance.Fractions">
+            <summary>
+            Maximum Fractions of an inch.
+            </summary>
+        </member>
+        <member name="F:Tekla.Structures.Datatype.Distance.decimalNumberFormat">
+            <summary>
+            Decimal number format.
+            </summary>
+        </member>
+        <member name="F:Tekla.Structures.Datatype.Distance.fractionalNumberFormat">
+            <summary>
+            Fractional number formats.
+            </summary>
+        </member>
+        <member name="F:Tekla.Structures.Datatype.Distance.fractionalFeetAndInchesFormat">
+            <summary>
+            Fractional US imperial formats.
+            </summary>
+        </member>
+        <member name="F:Tekla.Structures.Datatype.Distance.useUnitsInDecimalString">
+            <summary>
+            Indicates whether to use units in decimal string representation.
+            </summary>
+        </member>
+        <member name="F:Tekla.Structures.Datatype.Distance.useFractionalFormat">
+            <summary>
+            Indicates whether to use fractional format for US imperial units.
+            </summary>
+        </member>
+        <member name="F:Tekla.Structures.Datatype.Distance.millimeters">
+            <summary>
+            Distance in millimeters.
+            </summary>
+        </member>
+        <member name="T:Tekla.Structures.Datatype.Distance.UnitType">
+            <summary>
+            The distance units.
+            </summary>
+        </member>
+        <member name="F:Tekla.Structures.Datatype.Distance.UnitType.Millimeter">
+            <summary>
+            The millimeter unit type.
+            </summary>
+        </member>
+        <member name="F:Tekla.Structures.Datatype.Distance.UnitType.Centimeter">
+            <summary>
+            The centimeter unit type.
+            </summary>
+        </member>
+        <member name="F:Tekla.Structures.Datatype.Distance.UnitType.Meter">
+            <summary>
+            The meter unit type.
+            </summary>
+        </member>
+        <member name="F:Tekla.Structures.Datatype.Distance.UnitType.Inch">
+            <summary>
+            The inch unit type.
+            </summary>
+        </member>
+        <member name="F:Tekla.Structures.Datatype.Distance.UnitType.Foot">
+            <summary>
+            The foot unit type.
+            </summary>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Distance.GetSchema">
+            <exclude/>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Distance.GetXmlElement(System.Xml.XmlReader)">
+            <exclude/>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Distance.ReadXml(System.Xml.XmlReader)">
+            <exclude/>
+        </member>
+        <member name="F:Tekla.Structures.Datatype.Distance.MILLIMETERS">
+            <exclude/>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Distance.WriteXml(System.Xml.XmlWriter)">
+            <exclude/>
+        </member>
+        <member name="T:Tekla.Structures.Datatype.DistanceConverter">
+            <summary>
+            The DistanceConverter class converts types to and from the distance type.
+            </summary>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.DistanceConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Checks whether the conversion can be made from the source type to the distance type.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="sourceType">The type to convert from.</param>
+            <returns>True if possible, false if not possible.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.DistanceConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Checks whether the conversion can be made from the distance type to the destination type.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="destinationType">The type to convert to.</param>
+            <returns>True if possible, false if not possible.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.DistanceConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            Converts an object from the given culture to the distance type.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="culture">The culture.</param>
+            <param name="value">The object to be converted.</param>
+            <returns>The new distance object.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.DistanceConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            Converts an object from the distance type to the given destination type.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="culture">The target culture.</param>
+            <param name="value">The distance object to be converted.</param>
+            <param name="destinationType">The destination type.</param>
+            <returns>The given distance object converted to the new type.</returns>
+        </member>
+        <member name="T:Tekla.Structures.Datatype.DistanceList">
+            <summary>
+            A list of <see cref="T:Tekla.Structures.Datatype.Distance"/> instances.
+            </summary>
+            <remarks>
+            <see cref="T:Tekla.Structures.Datatype.DistanceList"/>s are used to store related <see cref="T:Tekla.Structures.Datatype.Distance"/> instances
+            in an enumerable, formattable list.
+            </remarks>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.DistanceList.#ctor(System.Collections.Generic.IEnumerable{Tekla.Structures.Datatype.Distance})">
+             <summary>
+             Initializes a new instance of the structure.
+             </summary>
+             <param name="distanceList">The distance list.</param>
+             <example>
+             This example shows how to construct an empty <see cref="T:Tekla.Structures.Datatype.DistanceList"/> instance
+             as well as a <see cref="T:Tekla.Structures.Datatype.DistanceList"/> instance from an existing enumerable
+             collection of <see cref="T:Tekla.Structures.Datatype.Distance"/> instances. A copy of the collection
+             is created, modifying the original collection does not affect
+             the constructed <see cref="T:Tekla.Structures.Datatype.DistanceList"/>.
+             <code>
+             using Tekla.Structures.Datatype;
+             
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        // By default the constructor creates an empty list.
+                        DistanceList defaultList = new DistanceList();
+            
+                        // Distance list can also be constructed from an array (or any other
+                        // enumerable collection) of Distance instances.
+                        Distance[] distances = { new Distance(30.2), new Distance(2.3) };
+            
+                        // Distance lists created this way contain a copy of the source collection.
+                        // Modifying the original collection does not affect the constructed list.
+                        DistanceList distanceList = new DistanceList(distances);
+             
+                        distanceList = defaultList;
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.DistanceList.Parse(System.String)">
+            <summary>
+            Parses a distance list from a string representation.
+            </summary>
+            <param name="input">The input string.</param>
+            <returns>The distance list.</returns>
+            <example>
+            This example shows how to parse distance lists with the current culture information
+            and the current unit type.
+            <code>
+            using Tekla.Structures.Datatype;
+            
+            public class Example
+            {
+                   public void Example1()
+                   {
+                       // Current unit type controls the default unit type used in parsing.
+                       // The default unit is millimeter.
+                       Distance.CurrentUnitType = Distance.UnitType.Millimeter;
+            
+                       // By default, the parsing uses the current unit type and the current culture info.
+                       // This will be parsed as 3 millimeters and 2 millimeters.
+                       DistanceList defaultFormat = DistanceList.Parse("3 2");
+                   }
+            }
+            </code>
+            </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.DistanceList.Parse(System.String,System.IFormatProvider)">
+            <summary>
+            Parses a distance list from a string representation.
+            </summary>
+            <param name="input">The input string.</param>
+            <param name="formatProvider">The format provider.</param>
+            <returns>The distance list.</returns>
+            <example>
+            This example shows how to override the format provider when parsing distance
+            lists. The Tekla Structures convention is to use a dot as the decimal separator
+            in all locales.
+            <code>
+            using Tekla.Structures.Datatype;
+            using System.Globalization;
+            
+            public class Example
+            {
+                   public void Example1()
+                   {
+                       // Current unit type controls the default unit type used in parsing.
+                       // The default unit is millimeter.
+                       Distance.CurrentUnitType = Distance.UnitType.Millimeter;
+            
+                       // Tekla Structures uses dot as the decimal separator in all locales.
+                       // This will be parsed as 3 times 30.2 millimeters.
+                       DistanceList TeklaStructuresFormat = DistanceList.Parse("3*30.2", CultureInfo.InvariantCulture);
+            
+                       // If the distance contains the unit, the distances are converted automatically.
+                       // This will be parsed as 3 times 30.2 meters.
+                       DistanceList distancesInMeters = DistanceList.Parse("3*30.2m", CultureInfo.InvariantCulture);
+                   }
+            }
+            </code>
+            </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.DistanceList.Parse(System.String,System.IFormatProvider,Tekla.Structures.Datatype.Distance.UnitType)">
+            <summary>
+            Parses a distance list from a string representation.
+            </summary>
+            <param name="input">The input string.</param>
+            <param name="formatProvider">The format provider.</param>
+            <param name="defaultUnitType">The default unit type.</param>
+            <returns>The distance list.</returns>
+            <example>
+            This example shows how to override both the format provider and the unit type
+            when parsing distance lists.
+            <code>
+            using Tekla.Structures.Datatype;
+            using System.Globalization;
+            
+            public class Example
+            {
+                   public void Example1()
+                   {
+                       // Current unit type controls the default unit type used in parsing.
+                       // The default unit is millimeter.
+                       Distance.CurrentUnitType = Distance.UnitType.Millimeter;
+            
+                       // We can override the current unit type to force the parsing to perform automatic unit conversion.
+                       // This will be parsed as 3 times 3.2 inches.
+                       DistanceList distanceInInches = DistanceList.Parse("3*3.2", CultureInfo.InvariantCulture, Distance.UnitType.Inch);
+            
+                       // When using feet or inches as the distance unit, the fractional format is supported as well.
+                       // This will be parsed as 3 times 3/4 inches.
+                       DistanceList inchesInFractionalFormat = DistanceList.Parse("3*3/4", CultureInfo.InvariantCulture, Distance.UnitType.Inch);
+                       
+                       // When a distance list is used in a plug-in dialog, the dialog attribute is passed to the plug-in execution as a string.
+                       // Distance values are then parsed from the string using InvariantCulture and Millimeter.
+                       DistanceList distancesInPluginRun = DistanceList.Parse("3*40.00 50.00", CultureInfo.InvariantCulture, Distance.UnitType.Millimeter);
+                   }
+            }
+            </code>
+            </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.DistanceList.ToString">
+             <summary>
+             Returns the string representation of the distance list.
+             </summary>
+             <returns>The string representation of the distance list.</returns>
+             <example>
+             This example shows how to format a <see cref="T:Tekla.Structures.Datatype.DistanceList"/> with the current
+             culture information and the current unit type.
+             <code>
+             using Tekla.Structures.Datatype;
+             
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        // Current unit type controls the default unit type used in formatting.
+                        // The default unit is millimeter.
+                        Distance.CurrentUnitType = Distance.UnitType.Millimeter;
+            
+                        // UseFractionalFormat controls whether the feet and inches are formatted
+                        // using the fractional representation. The default value is false which
+                        // causes the feet and inches to be represented as decimal numbers.
+                        Distance.UseFractionalFormat = false;
+            
+                        // UseUnitsInDecimalString controls whether the unit type is shown in the
+                        // decimal string representation. The default is false.
+                        Distance.UseUnitsInDecimalString = false;
+            
+                        // We'll use this distance list to demonstrate the formatting.
+                        DistanceList distanceList = new DistanceList(new Distance[]
+                                                                    {
+                                                                        new Distance(30.2),
+                                                                        new Distance(30.2),
+                                                                        new Distance(30.2),
+                                                                        new Distance(50),
+                                                                        new Distance(2.3),
+                                                                        new Distance(2.3),
+                                                                    });
+            
+                        // The default format uses the current unit type, current culture info and 
+                        // the default number format.
+                        string defaultFormat = distanceList.ToString();
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.DistanceList.ToString(System.IFormatProvider)">
+             <summary>
+             Returns the string representation of the distance list.
+             </summary>
+             <param name="formatProvider">The format provider.</param>
+             <returns>The string representation of the distance list.</returns>
+             <example>
+             This example shows how to override the format provider
+             when formatting a <see cref="T:Tekla.Structures.Datatype.DistanceList"/> instance.
+             The Tekla Structures convention is to use a dot as the decimal separator in all locales.
+             <code>
+             using Tekla.Structures.Datatype;
+             using System.Globalization;
+             
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        // Current unit type controls the default unit type used in formatting.
+                        // The default unit is millimeter.
+                        Distance.CurrentUnitType = Distance.UnitType.Millimeter;
+            
+                        // UseFractionalFormat controls whether the feet and inches are formatted
+                        // using the fractional representation. The default value is false which
+                        // causes the feet and inches to be represented as decimal numbers.
+                        Distance.UseFractionalFormat = false;
+            
+                        // UseUnitsInDecimalString controls whether the unit type is shown in the
+                        // decimal string representation. The default is false.
+                        Distance.UseUnitsInDecimalString = false;
+             
+                        // We'll use this distance list to demonstrate the formatting.
+                        DistanceList distanceList = new DistanceList(new Distance[]
+                                                                    {
+                                                                        new Distance(30.2),
+                                                                        new Distance(30.2),
+                                                                        new Distance(30.2),
+                                                                        new Distance(50),
+                                                                        new Distance(2.3),
+                                                                        new Distance(2.3),
+                                                                    });
+             
+                        // Tekla Structures uses dot as the decimal separator in all locales.
+                        string TeklaStructuresFormat = distanceList.ToString(null, CultureInfo.InvariantCulture);
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.DistanceList.ToString(System.String,System.IFormatProvider)">
+             <summary>
+             Returns the string representation of the distance list.
+             </summary>
+             <param name="format">The format string.</param>
+             <param name="formatProvider">The format provider.</param>
+             <returns>The string representation of the distance list.</returns>
+             <example>
+             This example shows how to override the number format and the format provider
+             when formatting a <see cref="T:Tekla.Structures.Datatype.DistanceList"/> instance. The Tekla Structures
+             convention is to use a dot as the decimal separator in all locales.
+             <code>
+             using Tekla.Structures.Datatype;
+             using System.Globalization;
+             
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        // Current unit type controls the default unit type used in formatting.
+                        // The default unit is millimeter.
+                        Distance.CurrentUnitType = Distance.UnitType.Millimeter;
+            
+                        // UseFractionalFormat controls whether the feet and inches are formatted
+                        // using the fractional representation. The default value is false which
+                        // causes the feet and inches to be represented as decimal numbers.
+                        Distance.UseFractionalFormat = false;
+            
+                        // UseUnitsInDecimalString controls whether the unit type is shown in the
+                        // decimal string representation. The default is false.
+                        Distance.UseUnitsInDecimalString = false;
+             
+                        // We'll use this distance list to demonstrate the formatting.
+                        DistanceList distanceList = new DistanceList(new Distance[]
+                                                                    {
+                                                                        new Distance(30.2),
+                                                                        new Distance(30.2),
+                                                                        new Distance(30.2),
+                                                                        new Distance(50),
+                                                                        new Distance(2.3),
+                                                                        new Distance(2.3),
+                                                                    });
+             
+                        // Tekla Structures uses dot as the decimal separator in all locales.
+                        string TeklaStructuresFormat = distanceList.ToString(null, CultureInfo.InvariantCulture);
+            
+                        // We can use the number format string to specify the precision. In this case, we use two decimal places.
+                        string TeklaStructuresFormatWithPrecicion = distanceList.ToString("0.00", CultureInfo.InvariantCulture);
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.DistanceList.ToString(System.String,System.IFormatProvider,Tekla.Structures.Datatype.Distance.UnitType)">
+             <summary>
+             Returns the string representation of the distance list.
+             </summary>
+             <param name="format">The format string.</param>
+             <param name="formatProvider">The format provider.</param>
+             <param name="unitType">The distance unit type.</param>
+             <returns>The string representation of the distance list.</returns>
+             <example>
+             This example shows how to override the number format, the format provider and
+             the unit type when formatting a <see cref="T:Tekla.Structures.Datatype.DistanceList"/> instance.
+             <code>
+             using Tekla.Structures.Datatype;
+             using System.Globalization;
+             
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        // Current unit type controls the default unit type used in formatting.
+                        // The default unit is millimeter.
+                        Distance.CurrentUnitType = Distance.UnitType.Millimeter;
+            
+                        // UseFractionalFormat controls whether the feet and inches are formatted
+                        // using the fractional representation. The default value is false which
+                        // causes the feet and inches to be represented as decimal numbers.
+                        Distance.UseFractionalFormat = false;
+             
+                        // UseUnitsInDecimalString controls whether the unit type is shown in the
+                        // decimal string representation. The default is false.
+                        Distance.UseUnitsInDecimalString = false;
+             
+                        // We'll use this distance list to demonstrate the formatting.
+                        DistanceList distanceList = new DistanceList(new Distance[]
+                                                                    {
+                                                                        new Distance(30.2),
+                                                                        new Distance(30.2),
+                                                                        new Distance(30.2),
+                                                                        new Distance(50),
+                                                                        new Distance(2.3),
+                                                                        new Distance(2.3),
+                                                                    });
+             
+                        // We can override the unit type to display the distances in inches.
+                        string defaultFormatInInches = distanceList.ToString(null, null, Distance.UnitType.Inch);
+             
+                        // We can also combine the above with the number format and culture info to get fully customized representation.
+                        string TeklaStructuresFormatWithPrecicionInInches = distanceList.ToString("0.00", CultureInfo.InvariantCulture, Distance.UnitType.Inch);
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.DistanceList.Add(Tekla.Structures.Datatype.Distance)">
+             <summary>
+             Adds the specified item at the end of the list.
+             </summary>
+             <param name="item">The item to be added.</param>
+             <example>
+             This example shows how to add a new <see cref="T:Tekla.Structures.Datatype.Distance"/> instance at the
+             end of the <see cref="T:Tekla.Structures.Datatype.DistanceList"/>.
+             <code>
+             using Tekla.Structures.Datatype;
+             
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        Distance[] distances = { new Distance(30.2), new Distance(2.3) };
+                        DistanceList distanceList = new DistanceList(distances);
+            
+                        // New distances can be added to the list using the DistanceList.Add method.
+                        distanceList.Add(new Distance(2));
+                        distanceList.Add(new Distance(40, Distance.UnitType.Inch));
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.DistanceList.Clear">
+             <summary>
+             Clears the list.
+             </summary>
+             <example>
+             This example shows how to remove all items from a <see cref="T:Tekla.Structures.Datatype.DistanceList"/>.
+             <code>
+             using Tekla.Structures.Datatype;
+             
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        Distance[] distances = { new Distance(30.2), new Distance(2.3) };
+                        DistanceList distanceList = new DistanceList(distances);
+            
+                        // The whole list can be cleared with DistanceList.Clear method.
+                        distanceList.Clear();
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.DistanceList.Contains(Tekla.Structures.Datatype.Distance)">
+            <summary>
+            Determines whether the specified item is in the list.
+            </summary>
+            <param name="item">The item to be matched.</param>
+            <returns>A boolean value indicating whether the item was found.</returns>
+            <example>
+            This example shows how to determine whether the specified <see cref="T:Tekla.Structures.Datatype.Distance"/>
+            instance is contained in a <see cref="T:Tekla.Structures.Datatype.DistanceList"/>.
+            <code>
+            using Tekla.Structures.Datatype;
+            
+            public class Example
+            {
+                   public void Example1()
+                   {
+                       // We'll use this distance list to demonstrate the Contains method.
+                       DistanceList distanceList = new DistanceList(new Distance[]
+                                                                   {
+                                                                       new Distance(30.2),
+                                                                       new Distance(30.2),
+                                                                       new Distance(30.2),
+                                                                       new Distance(50),
+                                                                       new Distance(2.3),
+                                                                       new Distance(2.3),
+                                                                   });
+            
+                       bool isInList = distanceList.Contains(new Distance(50));
+                   }
+            }
+            </code>
+            </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.DistanceList.CopyTo(Tekla.Structures.Datatype.Distance[],System.Int32)">
+            <summary>
+            Copies the contents of the list to an array.
+            </summary>
+            <param name="array">The target array.</param>
+            <param name="arrayIndex">The starting index in the array.</param>
+            <example>
+            This example shows how to copy the <see cref="T:Tekla.Structures.Datatype.Distance"/> instances in a
+            <see cref="T:Tekla.Structures.Datatype.DistanceList"/> to an array.
+            <code>
+            using Tekla.Structures.Datatype;
+            
+            public class Example
+            {
+                   public void Example1()
+                   {
+                       // We'll use this distance list to demonstrate the CopyTo method.
+                       DistanceList distanceList = new DistanceList(new Distance[]
+                                                                   {
+                                                                       new Distance(30.2),
+                                                                       new Distance(30.2),
+                                                                       new Distance(30.2),
+                                                                       new Distance(50),
+                                                                       new Distance(2.3),
+                                                                       new Distance(2.3),
+                                                                   }); 
+            
+                       Distance[] array = new Distance[distanceList.Count];
+                       distanceList.CopyTo(array, 0);
+                   }
+            }
+            </code>
+            </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.DistanceList.Remove(Tekla.Structures.Datatype.Distance)">
+             <summary>
+             Removes the specified item.
+             </summary>
+             <param name="item">The item to be removed.</param>
+             <returns>A boolean value indicating whether the item was removed.</returns>
+             <example>
+             This example shows how to remove a <see cref="T:Tekla.Structures.Datatype.Distance"/> instance from a
+             <see cref="T:Tekla.Structures.Datatype.DistanceList"/>.
+             <code>
+             using Tekla.Structures.Datatype;
+             
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        Distance[] distances = { new Distance(30.2), new Distance(40, Distance.UnitType.Inch) };
+                        DistanceList distanceList = new DistanceList(distances);
+            
+                        // Distances can be removed by value. The first matching distance will be removed.
+                        bool removed = distanceList.Remove(new Distance(40, Distance.UnitType.Inch));
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.DistanceList.IndexOf(Tekla.Structures.Datatype.Distance)">
+             <summary>
+             Returns the index of the first matching item in the list.
+             </summary>
+             <param name="item">The item to be matched.</param>
+             <returns>The index of the first matching item.</returns>
+             <example>
+             This example shows how to determine the index of the first matching 
+             <see cref="T:Tekla.Structures.Datatype.Distance"/> instance in a <see cref="T:Tekla.Structures.Datatype.DistanceList"/>.
+             <code>
+             using Tekla.Structures.Datatype;
+             
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        // We'll use this distance list to demonstrate the IndexOf method.
+                        DistanceList distanceList = new DistanceList(new Distance[]
+                                                                    {
+                                                                        new Distance(30.2),
+                                                                        new Distance(30.2),
+                                                                        new Distance(30.2),
+                                                                        new Distance(50),
+                                                                        new Distance(2.3),
+                                                                        new Distance(2.3),
+                                                                    });
+                        int index = distanceList.IndexOf(new Distance(2));
+            
+                        if(index &lt; 0)
+                        {
+                            // Not found.
+                        }
+                        else
+                        {
+                            // Found, do something with the index.
+                        }
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.DistanceList.Insert(System.Int32,Tekla.Structures.Datatype.Distance)">
+             <summary>
+             Inserts an item at the specified position.
+             </summary>
+             <param name="index">The index of the insertion point.</param>
+             <param name="item">The item to be inserted.</param>
+             <example>
+             This example shows how to insert a new <see cref="T:Tekla.Structures.Datatype.Distance"/> instance at the
+             beginning of the <see cref="T:Tekla.Structures.Datatype.DistanceList"/>.
+             <code>
+             using Tekla.Structures.Datatype;
+             
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        Distance[] distances = { new Distance(30.2), new Distance(2.3) };
+                        DistanceList distanceList = new DistanceList(distances);
+            
+                        distanceList.Insert(0, new Distance(2));
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.DistanceList.RemoveAt(System.Int32)">
+             <summary>
+             Removes an item at the specified position.
+             </summary>
+             <param name="index">The index of the item to be removed.</param>
+             <example>
+             This example shows how to remove a <see cref="T:Tekla.Structures.Datatype.Distance"/> instance from the
+             beginning of a <see cref="T:Tekla.Structures.Datatype.DistanceList"/>.
+             <code>
+             using Tekla.Structures.Datatype;
+             
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        Distance[] distances = { new Distance(30.2), new Distance(2.3) };
+                        DistanceList distanceList = new DistanceList(distances);
+            
+                        // Distance can be removed at any position using the DistanceList.RemoveAt method.
+                        distanceList.RemoveAt(1);
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.DistanceList.ToArray">
+             <summary>
+             Copies the contents of the list into a new array.
+             </summary>
+             <returns>The array of distances.</returns>
+             <example>
+             This example shows how to copy the <see cref="T:Tekla.Structures.Datatype.Distance"/> instances in a
+             <see cref="T:Tekla.Structures.Datatype.DistanceList"/> to a new array.
+             <code>
+             using Tekla.Structures.Datatype;
+             
+             public class Example
+             {
+                    public void Example1()
+                    {
+                        Distance[] distances = { new Distance(30.2), new Distance(2.3) };
+                        DistanceList distanceList = new DistanceList(distances);
+            
+                        // We can copy the list contents to a new array. This allows us to
+                        // enumerate the contents even if the list changes during the enumeration.
+                        Distance[] distancesInArray = distanceList.ToArray();
+            
+                        foreach(Distance distance in distancesInArray)
+                        {
+                            string formattedDistance = distance.ToString();
+                        }
+                    }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.DistanceList.GetEnumerator">
+            <summary>
+            Gets an enumerator for enumeraring through the list.
+            </summary>
+            <returns>The list enumerator.</returns>
+            <example>
+            This example shows how to enumerate the <see cref="T:Tekla.Structures.Datatype.Distance"/> instances in a
+            <see cref="T:Tekla.Structures.Datatype.DistanceList"/>.
+            <code>
+            using Tekla.Structures.Datatype;
+            
+            public class Example
+            {
+                public void Example1()
+                {
+                    Distance[] distances = { new Distance(30.2), new Distance(2.3) };
+                    DistanceList distanceList = new DistanceList(distances);
+            
+                    // In this example, GetEnumerator is not explicitly called, 
+                    // but it is implemented to support the use of foreach.
+                    foreach(Distance distance in distanceList)
+                    {
+                        string formattedDistance = distance.ToString();
+                    }
+            
+                    // Indexed access is also supported. This allows the list to be enumerated in
+                    // any order required.
+                    for(int i = 0; i &lt; distanceList.Count; i++)
+                    {
+                        string formattedDistance = distanceList[i].ToString();
+                    }
+                }
+            }
+            </code>
+            </example>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.DistanceList.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Gets an enumerator for enumeraring through the list.
+            </summary>
+            <returns>The list enumerator.</returns>
+            <remarks>
+            This method is implemented explicitly for legacy compatibility.
+            </remarks>
+        </member>
+        <member name="P:Tekla.Structures.Datatype.DistanceList.Item(System.Int32)">
+            <summary>
+            Gets or sets the item at the specified index.
+            </summary>
+            <param name="index">The index of an item in the list.</param>
+            <returns>The item at the specified index.</returns>
+            <example>
+            This example shows how to access the <see cref="T:Tekla.Structures.Datatype.Distance"/> instances in a
+            <see cref="T:Tekla.Structures.Datatype.DistanceList"/> by index.
+            <code>
+            using Tekla.Structures.Datatype;
+            
+            public class Example
+            {
+                   public void Example1()
+                   {
+                       // We'll use this distance list to demonstrate how to access and then 
+                       // modify items using an index.
+                       DistanceList distanceList = new DistanceList(new Distance[]
+                                                                   {
+                                                                       new Distance(30.2),
+                                                                       new Distance(30.2),
+                                                                       new Distance(30.2),
+                                                                       new Distance(50),
+                                                                       new Distance(2.3),
+                                                                       new Distance(2.3),
+                                                                   });
+            
+                       for(int i = 0; i &lt; distanceList.Count; i++)
+                       {
+                           Distance item = distanceList[i];
+            
+                           // Modify the item here.
+            
+                           distanceList[i] = item;
+                       }
+                   }
+            }
+            </code>
+            </example>
+        </member>
+        <member name="P:Tekla.Structures.Datatype.DistanceList.Count">
+            <summary>
+            Gets the number of items in the list.
+            </summary>
+            <value>
+            Number of items in the list.
+            </value>
+            <example>
+            This example shows how the get the number of <see cref="T:Tekla.Structures.Datatype.Distance"/> instances
+            in a <see cref="T:Tekla.Structures.Datatype.DistanceList"/>.
+            <code>
+            using Tekla.Structures.Datatype;
+            
+            public class Example
+            {
+                   public void Example1()
+                   {
+                       // We'll use this distance list to demonstrate the Count property.
+                       DistanceList distanceList = new DistanceList(new Distance[]
+                                                                   {
+                                                                       new Distance(30.2),
+                                                                       new Distance(30.2),
+                                                                       new Distance(30.2),
+                                                                       new Distance(50),
+                                                                       new Distance(2.3),
+                                                                       new Distance(2.3),
+                                                                   });
+                       int distanceCount = distanceList.Count;
+                   }
+            }
+            </code>
+            </example>
+        </member>
+        <member name="P:Tekla.Structures.Datatype.DistanceList.IsReadOnly">
+            <summary>
+            Gets a boolean value indicating whether the collection is read-only.
+            </summary>
+            <value>
+            A boolean value indicating whether the collection is read-only.
+            </value>
+            <remarks>
+            <see cref="T:Tekla.Structures.Datatype.DistanceList"/>s are always mutable.
+            </remarks>
+        </member>
+        <member name="P:Tekla.Structures.Datatype.DistanceList.Distances">
+            <summary>
+            Gets the list of <see cref="T:Tekla.Structures.Datatype.Distance"/>s.
+            </summary>
+            <value>
+            Underlying list of <see cref="T:Tekla.Structures.Datatype.Distance"/> instances.
+            </value>
+            <remarks>
+            This property is used to initialize the <see cref="F:Tekla.Structures.Datatype.DistanceList.distances"/> field in case
+            the <see cref="T:Tekla.Structures.Datatype.DistanceList"/> was created with the default constructor. This
+            is one side-effect of implementing the <see cref="T:Tekla.Structures.Datatype.DistanceList"/> as a struct
+            instead of a class.
+            </remarks>
+        </member>
+        <member name="F:Tekla.Structures.Datatype.DistanceList.distances">
+            <summary>
+            List of <see cref="T:Tekla.Structures.Datatype.Distance"/>s.
+            </summary>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.DistanceList.GetSchema">
+            <exclude/>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.DistanceList.ReadXml(System.Xml.XmlReader)">
+            <exclude/>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.DistanceList.WriteXml(System.Xml.XmlWriter)">
+            <exclude/>
+        </member>
+        <member name="T:Tekla.Structures.Datatype.DistanceListConverter">
+            <summary>
+            The DistanceListConverter class converts types to and from the distance list type.
+            </summary>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.DistanceListConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Checks whether the conversion can be made from the source type to the distance list type.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="sourceType">The type to convert from.</param>
+            <returns>True if possible, false if not possible.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.DistanceListConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Checks whether the conversion can be made from the distance list type to the destination type.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="destinationType">The type to convert to.</param>
+            <returns>True if possible, false if not possible.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.DistanceListConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            Converts an object from the given culture to the distance list type.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="culture">The culture.</param>
+            <param name="value">The object to be converted.</param>
+            <returns>The new distance object.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.DistanceListConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            Converts an object from the distance list type to the given destination type.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="culture">The target culture.</param>
+            <param name="value">The distance object to be converted.</param>
+            <param name="destinationType">The destination type.</param>
+            <returns>The given distance object converted to the new type.</returns>
+        </member>
+        <member name="T:Tekla.Structures.Datatype.Double">
+            <summary>
+            The Double datatype.
+            </summary>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Double.#ctor(System.Double)">
+            <summary>
+            Creates a new double datatype instance.
+            </summary>
+            <param name="value">The value for the double datatype.</param>
+        </member>
+        <member name="P:Tekla.Structures.Datatype.Double.Value">
+            <summary>
+            The value of the double datatype.
+            </summary>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Double.op_Implicit(Tekla.Structures.Datatype.Double)~System.Double">
+            <summary>
+            Converts from Datatype.Double to double.
+            </summary>
+            <param name="From">The value to be converted.</param>
+            <returns>The converted double value.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Double.op_Implicit(System.Double)~Tekla.Structures.Datatype.Double">
+            <summary>
+            Converts from double to Datatype.Double.
+            </summary>
+            <param name="From">The value to be converted.</param>
+            <returns>The converted Datatype.Double value.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Double.op_Equality(System.Double,Tekla.Structures.Datatype.Double)">
+            <summary>
+            Compares a double value with a Datatype.Double value.
+            </summary>
+            <param name="Left">The double value to be compared.</param>
+            <param name="Right">The Datatype.Double value to be compared.</param>
+            <returns>True if the values are the same.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Double.op_Inequality(System.Double,Tekla.Structures.Datatype.Double)">
+            <summary>
+            Compares a double value with a Datatype.Double value.
+            </summary>
+            <param name="Left">The double value to be compared.</param>
+            <param name="Right">The Datatype.Double value to be compared.</param>
+            <returns>True if the values are different.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Double.Equals(System.Object)">
+            <summary>
+            Returns a value that indicates whether the current instance is equal to the given object.
+            </summary>
+            <param name="Obj">The object to be used for comparing.</param>
+            <returns>True if the given object has the same value as the current instance.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Double.Equals(Tekla.Structures.Datatype.Double)">
+            <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <param name="other">The object to be compared with the current object.</param>
+            <returns>True if the current object is equal to the other object; otherwise, false.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Double.CompareTo(Tekla.Structures.Datatype.Double)">
+            <summary>
+            Compares the current object with another object of the same type.
+            </summary>
+            <param name="other">The object to be compared with the current object.</param>
+            <returns>
+            <para>A 32-bit signed integer that indicates the relative order of the objects being compared.</para>
+            <para>The return value has the following meanings:</para>
+            <list type="table">
+            <listheader>
+            <term>Value</term>
+            <description>Meaning</description>
+            </listheader>
+            <item>
+            <term>Less than zero</term>
+            <description>The current object is less than the other object.</description>
+            </item>
+            <item>
+            <term>Zero</term>
+            <description>The current object is equal to the other object.</description>
+            </item>
+            <item>
+            <term>Greater than zero</term>
+            <description>The current object is greater than the other object.</description>
+            </item>
+            </list>
+            </returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Double.GetHashCode">
+            <summary>
+            Returns the hash code for the current instance.
+            </summary>
+            <returns>A hash code for the current Double instance.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Double.ToString">
+            <summary>
+            Returns the string representation of the object.
+            </summary>
+            <returns>The string representation of the object.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Double.GetSchema">
+            <summary>
+            Gets the XML Schema for the datatype.
+            </summary>
+            <returns>The datatype's XML Schema.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Double.ReadXml(System.Xml.XmlReader)">
+            <summary>
+            Parses a new value from the given reader.
+            </summary>
+            <param name="reader">The reader to be used.</param>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Double.WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            Writes the value as XML to the given writer.
+            </summary>
+            <param name="writer">The writer to be used.</param>
+        </member>
+        <member name="T:Tekla.Structures.Datatype.DoubleConverter">
+            <summary>
+            The DoubleConverter class converts types to and from the double datatype.
+            </summary>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.DoubleConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Checks whether the conversion can be made from the source type to the double datatype.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="sourceType">The type to convert from.</param>
+            <returns>True if possible, false if not possible.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.DoubleConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Checks whether the conversion can be made from the double datatype to the destination type.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="destinationType">The type to convert to.</param>
+            <returns>True if possible, false if not possible.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.DoubleConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            Converts an object from the given culture to the Tekla.Structures.Datatype.Double type.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="culture">The culture.</param>
+            <param name="value">The object to be converted.</param>
+            <returns>The new double datatype object.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.DoubleConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            Converts an object from the double datatype to the given destination type.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="culture">The target culture.</param>
+            <param name="value">The double datatype object to be converted.</param>
+            <param name="destinationType">The destination type.</param>
+            <returns>The given double datatype object converted to the new type.</returns>
+        </member>
+        <member name="T:Tekla.Structures.Datatype.Enum`1">
+            <summary>The Enum datatype generic.</summary>
+            <typeparam name="E">The enum to handle.</typeparam>
+        </member>
+        <member name="P:Tekla.Structures.Datatype.Enum`1.Value">
+            <summary>Gets or sets the value.</summary>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Enum`1.GetSchema">
+            <inheritdocs/>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Enum`1.ReadXml(System.Xml.XmlReader)">
+            <inheritdocs/>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Enum`1.WriteXml(System.Xml.XmlWriter)">
+            <inheritdocs/>
+        </member>
+        <member name="T:Tekla.Structures.Datatype.EnumConverter">
+            <summary>Type converter for <see cref="T:System.Enum"/></summary>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.EnumConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <inheritdocs/>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.EnumConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <inheritdocs/>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.EnumConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <inheritdocs/>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.EnumConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <inheritdocs/>
+        </member>
+        <member name="T:Tekla.Structures.Datatype.IDataType">
+            <summary>
+            The IDataType interface is the root interface for converting all the
+            Tekla.Structures.Datatype.* types to basic types supported by the
+            Tekla Structures Object Dialog tree.
+            </summary>
+        </member>
+        <member name="T:Tekla.Structures.Datatype.IDoubleDataType">
+            <summary>
+            The IDoubleDataType interface is an interface for the Tekla.Structures.Datatype.*
+            types whose value is a double.
+            </summary>
+        </member>
+        <member name="P:Tekla.Structures.Datatype.IDoubleDataType.Value">
+            <summary>
+            The double value of the field.
+            </summary>
+        </member>
+        <member name="T:Tekla.Structures.Datatype.IIntDataType">
+            <summary>
+            The IIntDataType interface is an interface for the Tekla.Structures.Datatype.*
+            types whose value is an integer.
+            </summary>
+        </member>
+        <member name="P:Tekla.Structures.Datatype.IIntDataType.Value">
+            <summary>
+            The integer value of the field.
+            </summary>
+        </member>
+        <member name="T:Tekla.Structures.Datatype.Integer">
+            <summary>
+            The Integer datatype.
+            </summary>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Integer.#ctor(System.Int32)">
+            <summary>
+            Creates a new integer datatype instance.
+            </summary>
+            <param name="value">The value for the integer datatype.</param>
+        </member>
+        <member name="P:Tekla.Structures.Datatype.Integer.Value">
+            <summary>
+            The value of the integer datatype.
+            </summary>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Integer.op_Implicit(Tekla.Structures.Datatype.Integer)~System.Int32">
+            <summary>
+            Converts from Datatype.Integer to int.
+            </summary>
+            <param name="From">The value to be converted.</param>
+            <returns>The converted int value.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Integer.op_Implicit(System.Int32)~Tekla.Structures.Datatype.Integer">
+            <summary>
+            Converts from int to Datatype.Integer.
+            </summary>
+            <param name="From">The value to be converted.</param>
+            <returns>The converted Datatype.Integer value.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Integer.op_Equality(System.Int32,Tekla.Structures.Datatype.Integer)">
+            <summary>
+            Compares an int value with a Datatype.Integer value.
+            </summary>
+            <param name="Left">The int value to be compared.</param>
+            <param name="Right">The Datatype.Integer value to be compared.</param>
+            <returns>True if the values are the same.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Integer.op_Inequality(System.Int32,Tekla.Structures.Datatype.Integer)">
+            <summary>
+            Compares an int value with a Datatype.Integer value.
+            </summary>
+            <param name="Left">The int value to be compared.</param>
+            <param name="Right">The Datatype.Integer value to be compared.</param>
+            <returns>True if the values are different.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Integer.Equals(System.Object)">
+            <summary>
+            Returns a value that indicates whether the current instance is equal to the given object.
+            </summary>
+            <param name="Obj">The object to be used for comparing.</param>
+            <returns>True if the given object has the same value as the current instance.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Integer.GetHashCode">
+            <summary>
+            Returns the hash code for the current instance.
+            </summary>
+            <returns>A hash code for the current Integer instance.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Integer.ToString">
+            <summary>
+            Returns the string representation of the object.
+            </summary>
+            <returns>The string representation of the object.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Integer.GetSchema">
+            <summary>
+            Gets the XML Schema for the datatype.
+            </summary>
+            <returns>The datatype's XML Schema.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Integer.ReadXml(System.Xml.XmlReader)">
+            <summary>
+            Parses a new value from the given reader.
+            </summary>
+            <param name="reader">The reader to be used.</param>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Integer.WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            Writes the value as XML to the given writer.
+            </summary>
+            <param name="writer">The writer to be used.</param>
+        </member>
+        <member name="T:Tekla.Structures.Datatype.IntegerConverter">
+            <summary>
+            The IntegerConverter class converts types to and from the integer datatype.
+            </summary>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.IntegerConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Checks whether the conversion can be made from the source type to the integer datatype.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="sourceType">The type to convert from.</param>
+            <returns>True if possible, false if not possible.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.IntegerConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Checks whether the conversion can be made from the integer datatype to the destination type.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="destinationType">The type to convert to.</param>
+            <returns>True if possible, false if not possible.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.IntegerConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            Converts an object from the given culture to the Tekla.Structures.Datatype.Integer type.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="culture">The culture.</param>
+            <param name="value">The object to be converted.</param>
+            <returns>The new integer datatype object.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.IntegerConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            Converts an object from the the integer datatype to the given destination type.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="culture">The target culture.</param>
+            <param name="value">The integer datatype object to be converted.</param>
+            <param name="destinationType">The destination type.</param>
+            <returns>The given integer datatype object converted to the new type.</returns>
+        </member>
+        <member name="T:Tekla.Structures.Datatype.IStringDataType">
+            <summary>
+            The IStringDataType interface is an interface for the Tekla.Structures.Datatype.*
+            types whose value is a string.
+            </summary>
+        </member>
+        <member name="P:Tekla.Structures.Datatype.IStringDataType.Value">
+            <summary>
+            The string value of the field.
+            </summary>
+        </member>
+        <member name="T:Tekla.Structures.Datatype.Settings">
+            <summary>
+            The Settings class contains the currently active unit settings.
+            </summary>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Settings.GetValue(System.String)">
+            <summary>
+            Gets the value of the setting with the given name.
+            </summary>
+            <param name="name">The name of the setting.</param>
+            <returns>The value of the given setting.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Settings.TryGetValue(System.String,System.Object@)">
+            <summary>
+            Tries to get the value of the setting with the given name.
+            </summary>
+            <param name="name">The name of the setting.</param>
+            <param name="obj">The value of the given setting.</param>
+            <returns>True on success, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Settings.TryGetValue``1(System.String,``0@)">
+            <summary>
+            Tries to get the value of the setting with the given name and given object type.
+            </summary>
+            <typeparam name="T">Type of the object to get</typeparam>
+            <param name="name">The name of the setting.</param>
+            <param name="obj">The value of the given setting.</param>
+            <returns>True on success, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.Settings.SetValue(System.String,System.Object)">
+            <summary>
+            Sets a setting to a value.
+            </summary>
+            <param name="name">The name of the setting.</param>
+            <param name="value">The new value for the setting.</param>
+        </member>
+        <member name="T:Tekla.Structures.Datatype.SettingsProxy">
+            <summary>
+            The SettingsProxy class is a proxy for the settings.
+            </summary>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.SettingsProxy.#ctor">
+            <summary>
+            Creates a new settings proxy instance.
+            </summary>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.SettingsProxy.GetValue(System.String)">
+            <summary>
+            Gets the value of the setting with the given name.
+            </summary>
+            <param name="name">The name of the setting.</param>
+            <returns>The value of the given setting.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.SettingsProxy.TryGetValue(System.String,System.Object@)">
+            <summary>
+            Tries to get the value of the setting with the given name.
+            </summary>
+            <param name="name">The name of the setting.</param>
+            <param name="obj">The value of the given setting.</param>
+            <returns>True on success, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.SettingsProxy.SetValue(System.String,System.Object)">
+            <summary>
+            Sets a setting to a value.
+            </summary>
+            <param name="name">The name of the setting.</param>
+            <param name="value">The new value for the setting.</param>
+        </member>
+        <member name="T:Tekla.Structures.Datatype.String">
+            <summary>
+            The String datatype.
+            </summary>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.String.#ctor(System.String)">
+            <summary>
+            Creates a new string datatype instance.
+            </summary>
+            <param name="text">The value for the string datatype.</param>
+        </member>
+        <member name="P:Tekla.Structures.Datatype.String.Value">
+            <summary>
+            The value of the string datatype.
+            </summary>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.String.op_Implicit(Tekla.Structures.Datatype.String)~System.String">
+            <summary>
+            Converts from Datatype.String to string.
+            </summary>
+            <param name="From">The value to be converted.</param>
+            <returns>The converted string value.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.String.op_Implicit(System.String)~Tekla.Structures.Datatype.String">
+            <summary>
+            Converts from string to Datatype.String.
+            </summary>
+            <param name="From">The value to be converted.</param>
+            <returns>The converted Datatype.String value.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.String.op_Equality(System.String,Tekla.Structures.Datatype.String)">
+            <summary>
+            Compares a string value with a Datatype.String value.
+            </summary>
+            <param name="Left">The string value to be compared.</param>
+            <param name="Right">The Datatype.String value to be compared.</param>
+            <returns>True if the values are the same.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.String.op_Inequality(System.String,Tekla.Structures.Datatype.String)">
+            <summary>
+            Compares a string value with a Datatype.String value.
+            </summary>
+            <param name="Left">The string value to be compared.</param>
+            <param name="Right">The Datatype.String value to be compared.</param>
+            <returns>True if the values are different.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.String.Equals(System.Object)">
+            <summary>
+            Returns a value that indicates whether the current instance is equal to the given object.
+            </summary>
+            <param name="Obj">The object to be used for comparing.</param>
+            <returns>True if the given object has the same value as the current instance.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.String.GetHashCode">
+            <summary>
+            Returns the hash code for the current instance.
+            </summary>
+            <returns>A hash code for the current String instance.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.String.ToString">
+            <summary>
+            Returns the string representation of the object.
+            </summary>
+            <returns>The string representation of the object.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.String.GetSchema">
+            <summary>
+            Gets the XML Schema for the datatype.
+            </summary>
+            <returns>The datatype's XML Schema.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.String.ReadXml(System.Xml.XmlReader)">
+            <summary>
+            Parses a new value from the given reader.
+            </summary>
+            <param name="reader">The reader to be used.</param>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.String.WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            Writes the value as XML to the given writer.
+            </summary>
+            <param name="writer">The writer to be used.</param>
+        </member>
+        <member name="T:Tekla.Structures.Datatype.StringConverter">
+            <summary>
+            The StringConverter class converts types to and from the string datatype.
+            </summary>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.StringConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Checks whether the conversion can be made from the source type to the string datatype.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="sourceType">The type to convert from.</param>
+            <returns>True if possible, false if not possible.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.StringConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Checks whether the conversion can be made from the string datatype to the destination type.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="destinationType">The type to convert to.</param>
+            <returns>True if possible, false if not possible.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.StringConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            Converts an object from the given culture to the Tekla.Structures.Datatype.String type.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="culture">The culture.</param>
+            <param name="value">The object to be converted.</param>
+            <returns>The new string datatype object.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.StringConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            Converts an object from the string datatype to the given destination type.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="culture">The target culture.</param>
+            <param name="value">The string datatype object to be converted.</param>
+            <param name="destinationType">The destination type.</param>
+            <returns>The given string datatype object converted to the new type.</returns>
+        </member>
+        <member name="T:Tekla.Structures.Datatype.ValueList">
+            <summary>
+            Provides methods for working with generic value lists.
+            </summary>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.ValueList.ToString``1(System.Collections.Generic.IEnumerable{``0},Tekla.Structures.Datatype.ValueList.ToStringFunc{``0})">
+            <summary>
+            Converts a list of values into a string.
+            </summary>
+            <typeparam name="T">Value type.</typeparam>
+            <param name="values">Enumerable list of values.</param>
+            <param name="toString">ToString function delegate.</param>
+            <returns>Formatted string representation of the value list.</returns>
+        </member>
+        <member name="M:Tekla.Structures.Datatype.ValueList.Parse``1(System.String,Tekla.Structures.Datatype.ValueList.TryParseFunc{``0})">
+            <summary>
+            Parses a value list.
+            </summary>
+            <typeparam name="T">Value type.</typeparam>
+            <param name="input">Input string.</param>
+            <param name="tryParse">TryParse function delegate.</param>
+            <returns>Enumerable list of parsed values.</returns>
+        </member>
+        <member name="T:Tekla.Structures.Datatype.ValueList.ToStringFunc`1">
+            <summary>
+            Delegate for ToString function.
+            </summary>
+            <typeparam name="T">Value type.</typeparam>
+            <param name="value">Value to convert.</param>
+            <returns>Converted string.</returns>
+        </member>
+        <member name="T:Tekla.Structures.Datatype.ValueList.TryParseFunc`1">
+            <summary>
+            Delegate for TryParse function.
+            </summary>
+            <typeparam name="T">Value type.</typeparam>
+            <param name="text">Input text.</param>
+            <param name="value">Output variable for the value.</param>
+            <returns>A boolean value indicating whether the input text was parsed.</returns>
+        </member>
+        <member name="F:Tekla.Structures.Datatype.ValueList.separator">
+            <summary>
+            Value separator.
+            </summary>
+        </member>
+        <member name="F:Tekla.Structures.Datatype.ValueList.multiplier">
+            <summary>
+            Value multiplier.
+            </summary>
+        </member>
+    </members>
+</doc>
