@@ -36,9 +36,10 @@ namespace Exercise
             // 
             // CreatePadFootingButton
             // 
-            this.CreatePadFootingButton.Location = new System.Drawing.Point(28, 56);
+            this.CreatePadFootingButton.Location = new System.Drawing.Point(51, 90);
+            this.CreatePadFootingButton.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.CreatePadFootingButton.Name = "CreatePadFootingButton";
-            this.CreatePadFootingButton.Size = new System.Drawing.Size(126, 23);
+            this.CreatePadFootingButton.Size = new System.Drawing.Size(323, 37);
             this.CreatePadFootingButton.TabIndex = 0;
             this.CreatePadFootingButton.Text = "Footings and Columns";
             this.CreatePadFootingButton.UseVisualStyleBackColor = true;
@@ -46,26 +47,29 @@ namespace Exercise
             // 
             // FootingSize
             // 
-            this.FootingSize.Location = new System.Drawing.Point(96, 30);
+            this.FootingSize.Location = new System.Drawing.Point(262, 49);
+            this.FootingSize.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.FootingSize.Name = "FootingSize";
-            this.FootingSize.Size = new System.Drawing.Size(58, 20);
+            this.FootingSize.Size = new System.Drawing.Size(103, 31);
             this.FootingSize.TabIndex = 1;
             this.FootingSize.TextChanged += new System.EventHandler(this.FootingSize_TextChanged);
             // 
             // SizeLabel1
             // 
             this.SizeLabel1.AutoSize = true;
-            this.SizeLabel1.Location = new System.Drawing.Point(25, 33);
+            this.SizeLabel1.Location = new System.Drawing.Point(62, 52);
+            this.SizeLabel1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.SizeLabel1.Name = "SizeLabel1";
-            this.SizeLabel1.Size = new System.Drawing.Size(65, 13);
+            this.SizeLabel1.Size = new System.Drawing.Size(142, 22);
             this.SizeLabel1.TabIndex = 2;
             this.SizeLabel1.Text = "Footing Size";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(28, 86);
+            this.button2.Location = new System.Drawing.Point(51, 139);
+            this.button2.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(126, 23);
+            this.button2.Size = new System.Drawing.Size(323, 37);
             this.button2.TabIndex = 3;
             this.button2.Text = "Create rebars";
             this.button2.UseVisualStyleBackColor = true;
@@ -73,13 +77,14 @@ namespace Exercise
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(202, 123);
+            this.ClientSize = new System.Drawing.Size(544, 233);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.SizeLabel1);
             this.Controls.Add(this.FootingSize);
             this.Controls.Add(this.CreatePadFootingButton);
+            this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Name = "Form1";
             this.Text = "DotNetExample";
             this.ResumeLayout(false);

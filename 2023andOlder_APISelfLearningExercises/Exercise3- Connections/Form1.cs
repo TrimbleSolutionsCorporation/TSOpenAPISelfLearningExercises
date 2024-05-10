@@ -77,7 +77,7 @@ namespace Exercise
 
             PadFooting.Name = "FOOTING";
             PadFooting.Profile.ProfileString = FootingSize + "*" + FootingSize; //"1500*1500";
-            PadFooting.Material.MaterialString = "K30-2";
+            PadFooting.Material.MaterialString = "C30";
             PadFooting.Class = "8";
             PadFooting.StartPoint.X = PositionX;
             PadFooting.StartPoint.Y = PositionY;
@@ -108,8 +108,8 @@ namespace Exercise
             Beam Column = new Beam();
 
             Column.Name = "COLUMN";
-            Column.Profile.ProfileString = "HEA400";
-            Column.Material.MaterialString = "S235JR";
+            Column.Profile.ProfileString = "HM550*300*11*18";
+            Column.Material.MaterialString = "Q235B";
             Column.Class = "2";
             Column.StartPoint.X = PositionX;
             Column.StartPoint.Y = PositionY;

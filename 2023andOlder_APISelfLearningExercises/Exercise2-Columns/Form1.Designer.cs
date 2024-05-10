@@ -33,9 +33,10 @@ namespace Exercise
             // 
             // CreatePadFootingButton
             // 
-            this.CreatePadFootingButton.Location = new System.Drawing.Point(41, 27);
+            this.CreatePadFootingButton.Location = new System.Drawing.Point(33, 43);
+            this.CreatePadFootingButton.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.CreatePadFootingButton.Name = "CreatePadFootingButton";
-            this.CreatePadFootingButton.Size = new System.Drawing.Size(121, 23);
+            this.CreatePadFootingButton.Size = new System.Drawing.Size(301, 37);
             this.CreatePadFootingButton.TabIndex = 0;
             this.CreatePadFootingButton.Text = "Footings and Columns";
             this.CreatePadFootingButton.UseVisualStyleBackColor = true;
@@ -43,10 +44,11 @@ namespace Exercise
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(202, 123);
+            this.ClientSize = new System.Drawing.Size(370, 199);
             this.Controls.Add(this.CreatePadFootingButton);
+            this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Name = "Form1";
             this.Text = "DotNetExample";
             this.ResumeLayout(false);
